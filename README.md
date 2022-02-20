@@ -80,3 +80,17 @@
         Uninstalling pip-20.1.1:
         Successfully uninstalled pip-20.1.1
     Successfully installed pip-22.0.3
+
+## 3. 프로젝트 생성
+
+    mkdir WEB
+    cd WEB
+
+## 3.1 WEB 디렉터리를 프로젝트 디렉터리로 만들기
+    
+    django-admin startproject config . 
+
+    -------------------------------------------------------------------
+
+    (venv) PS F:\BlackCode\PYTHON\WODKSPACE\Pythonanywhere> cd .\WEB\
+    (venv) PS F:\BlackCode\PYTHON\WODKSPACE\Pythonanywhere\WEB> django-admin startproject config .
