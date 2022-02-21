@@ -5,7 +5,7 @@
     os : windows 10
     language : python
     배포툴 : https://www.pythonanywhere.com/
-    배포 url : http://iiblackcode.pythonanywhere.com/
+    배포 url : https://blackcode42.pythonanywhere.com/web/theme/index/
 
 ## 1. GIT 연결/연동
 
@@ -13,7 +13,7 @@
     git remote add origin https://github.com/IIBlackCode/pythonanywhere.git
     git pull origin master
 
-## 2. 가상환경
+## 2. 가상환경 [windows]
 
 ### 2.1 가상환경 생성
 
@@ -96,3 +96,12 @@
 
     (venv) PS F:\BlackCode\PYTHON\WODKSPACE\Pythonanywhere> cd .\WEB\
     (venv) PS F:\BlackCode\PYTHON\WODKSPACE\Pythonanywhere\WEB> django-admin startproject config .
+
+## 3.2 APP 생성
+
+    django-admin startapp APP
+
+    -------------------------------------------------------------------
+
+    (venv) PS F:\BlackCode\PYTHON\WODKSPACE\Pythonanywhere\WEB> django-admin startapp APP
+    
