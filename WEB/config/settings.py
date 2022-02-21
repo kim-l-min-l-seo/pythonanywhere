@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-0&y#w=v_)upd1kfw7y!#0e_^cg6*17+q8=z1@+5yhdwa#x*np#
 DEBUG = True
 
 # 2022.02.22 ALLOWED_HOSTS 설정, pythonanywhere 추가
-ALLOWED_HOSTS = ['.pythonanywhere.com']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition

@@ -6,7 +6,7 @@ class Theme :
     
     def theme(request, page):
         print("PAGE : ",page)
-        page ='Home'
+        
         context = {
             'page' : page
         }
@@ -14,5 +14,5 @@ class Theme :
         if page == "index":   
             return render(request, './theme/index.html', context)
         else : 
-            return HttpResponse("개발 진행중 2022.02.22")
+            return HttpResponse("개발 진행중 2022.02.22 "+page)
         
