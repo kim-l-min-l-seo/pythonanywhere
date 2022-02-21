@@ -4,6 +4,8 @@
 
     os : windows 10
     language : python
+    배포툴 : https://www.pythonanywhere.com/
+    배포 url : http://iiblackcode.pythonanywhere.com/
 
 ## 1. GIT 연결/연동
 
