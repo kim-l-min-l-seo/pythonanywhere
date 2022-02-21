@@ -8,4 +8,6 @@ class Theme :
         context = {
             'page' : page
         }
-        return render(request, './theme/index.html', context)
+        
+        if page == "index":   
+            return render(request, './theme/index.html', context)
