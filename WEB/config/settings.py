@@ -120,6 +120,13 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+# 2022.02.22 static 디렉토리 추가
+import os
+STATICFILES_DIRS = [
+    BASE_DIR / 'static',
+    os.path.join(BASE_DIR,"static")
+]
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
