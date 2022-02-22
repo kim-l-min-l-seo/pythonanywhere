@@ -6,5 +6,5 @@ from .view.theme import Theme
 
 urlpatterns = [
     path('', views.index),
-    path('theme/<page>/', Theme.theme),
+    path('theme/<html>/', Theme.theme),
 ]
