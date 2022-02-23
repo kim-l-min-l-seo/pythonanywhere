@@ -4,12 +4,12 @@ from setuptools import Require
 
 class Theme :
     
-    def theme(request, menu, pages):
+    def url(request, menu, pages):
         print("menu : ",menu)
         print("page : ",pages)
         
         context = {
-            'menu' : menu
+            'url' : "theme"
         }
         
         if (menu == "index" or menu == "home") and pages == "x":   

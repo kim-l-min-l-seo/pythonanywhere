@@ -126,13 +126,28 @@
                         <li>
                             <a href="#"><span>Pages <i class="fa fa-angle-down"></i></span></a>
                             <ul class="dropdown">
-                                <li><a href="/web/theme/pages/1/">Categories</a></li>
-                                <li><a href="/web/theme/pages/2/">Categories grid</a></li>
-                                <li><a href="/web/theme/pages/3/">Typography</a></li>
-                                <li><a href="/web/theme/pages/4/">Post default</a></li>
-                                <li><a href="/web/theme/pages/5/">Post gallery</a></li>
-                                <li><a href="/web/theme/pages/6/">Post review</a></li>
-                                <li><a href="/web/theme/pages/7/">Contact</a></li>
+                                {% block content %}
+                                    {% if url == 'theme' %}
+                                <li><a href="#"> # Theme Pages # </a></li>
+                                <li><a href="/theme/pages/1/">Categories</a></li>
+                                <li><a href="/theme/pages/2/">Categories grid</a></li>
+                                <li><a href="/theme/pages/3/">Typography</a></li>
+                                <li><a href="/theme/pages/4/">Post default</a></li>
+                                <li><a href="/theme/pages/5/">Post gallery</a></li>
+                                <li><a href="/theme/pages/6/">Post review</a></li>
+                                <li><a href="/theme/pages/7/">Contact</a></li>
+                                    {% endif %}
+                                    {% if url == 'web' %}
+                                <li><a href="#"> # Web Pages # </a></li>
+                                <li><a href="/web/pages/1/">Categories</a></li>
+                                <li><a href="/web/pages/2/">Categories grid</a></li>
+                                <li><a href="/web/pages/3/">Typography</a></li>
+                                <li><a href="/web/pages/4/">Post default</a></li>
+                                <li><a href="/web/pages/5/">Post gallery</a></li>
+                                <li><a href="/web/pages/6/">Post review</a></li>
+                                <li><a href="/web/pages/7/">Contact</a></li>
+                                    {% endif %}
+                                {% endblock %}
                             </ul>
                         </li>
                         <li><a href="#"><span>Reviews <i class="fa fa-angle-down"></i></span></a></li>
