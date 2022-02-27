@@ -2,12 +2,12 @@
 <!DOCTYPE html>
 <html lang="zxx">
 
-{% include "include/head.html" %}
+{% include "include/theme/head.html" %}
 
 <body>
-    {% include "include/HumbergerMenu.html" %}
+    {% include "include/theme/HumbergerMenu.html" %}
 
-    {% include "include/Header.html" %}
+    {% include "include/theme/Header.html" %}
 
     <!-- Details Post Section Begin -->
     <section class="details-post-section spad">
@@ -30,7 +30,7 @@
                         </div>
                         <div class="dt-pic-item">
                             <div class="dp-pic">
-                                <img src="img/details/dp-p1.jpg" alt="">
+                                <img src="{% static 'img/details/dp-p1.jpg' %}" alt="">
                             </div>
                             <div class="dp-text">
                                 <p>Vestibulum commodo nulla eu augue tincidunt rutrum. Suspendisse interdum lacus in
@@ -159,7 +159,7 @@
                             </div>
                             <div class="trending-item">
                                 <div class="ti-pic">
-                                    <img src="img/trending/trending-5.jpg" alt="">
+                                    <img src="{% static 'img/trending/trending-5.jpg' %}" alt="">
                                 </div>
                                 <div class="ti-text">
                                     <h6><a href="#">A Monster Prom poster got hijacked for a Papa Roach concert...</a>
@@ -172,7 +172,7 @@
                             </div>
                             <div class="trending-item">
                                 <div class="ti-pic">
-                                    <img src="img/trending/trending-6.jpg" alt="">
+                                    <img src="{% static 'img/trending/trending-6.jpg' %}" alt="">
                                 </div>
                                 <div class="ti-text">
                                     <h6><a href="#">Facebook wants to read your thoughts with its augmented...</a></h6>
@@ -184,7 +184,7 @@
                             </div>
                             <div class="trending-item">
                                 <div class="ti-pic">
-                                    <img src="img/trending/trending-7.jpg" alt="">
+                                    <img src="{% static 'img/trending/trending-7.jpg' %}" alt="">
                                 </div>
                                 <div class="ti-text">
                                     <h6><a href="#">This gaming laptop with a GTX 1660 Ti and 32GB of RAM is down...</a>
@@ -197,7 +197,7 @@
                             </div>
                             <div class="trending-item">
                                 <div class="ti-pic">
-                                    <img src="img/trending/trending-8.jpg" alt="">
+                                    <img src="{% static 'img/trending/trending-8.jpg' %}" alt="">
                                 </div>
                                 <div class="ti-text">
                                     <h6><a href="#">Jalopy developer is making a game where you 'build stuff...</a></h6>
@@ -213,10 +213,10 @@
                                 <h5>Instagram</h5>
                             </div>
                             <div class="insta-pic">
-                                <img src="img/instagram/ip-1.jpg" alt="">
-                                <img src="img/instagram/ip-2.jpg" alt="">
-                                <img src="img/instagram/ip-3.jpg" alt="">
-                                <img src="img/instagram/ip-4.jpg" alt="">
+                                <img src="{% static 'img/instagram/ip-1.jpg' %}" alt="">
+                                <img src="{% static 'img/instagram/ip-2.jpg' %}" alt="">
+                                <img src="{% static 'img/instagram/ip-3.jpg' %}" alt="">
+                                <img src="{% static 'img/instagram/ip-4.jpg' %}" alt="">
                             </div>
                         </div>
                         <div class="best-of-post">
@@ -321,7 +321,7 @@
                 <div class="col-lg-4">
                     <div class="footer-about">
                         <div class="fa-logo">
-                            <a href="#"><img src="img/f-logo.png" alt=""></a>
+                            <a href="#"><img src="{% static 'img/f-logo.png' %}" alt=""></a>
                         </div>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
                             labore et dolore magna aliqua lacus vel facilisis.</p>
@@ -340,7 +340,7 @@
                         </div>
                         <div class="ec-item">
                             <div class="ec-pic">
-                                <img src="img/trending/editor-1.jpg" alt="">
+                                <img src="{% static 'img/trending/editor-1.jpg' %}" alt="">
                             </div>
                             <div class="ec-text">
                                 <h6><a href="#">A Monster Prom poster got hijacked for a Papa Roach concert...</a>
@@ -353,7 +353,7 @@
                         </div>
                         <div class="ec-item">
                             <div class="ec-pic">
-                                <img src="img/trending/editor-2.jpg" alt="">
+                                <img src="{% static 'img/trending/editor-2.jpg' %}" alt="">
                             </div>
                             <div class="ec-text">
                                 <h6><a href="#">Facebook wants to read your thoughts with its augmented...</a>
@@ -449,7 +449,7 @@
     </div>
     <!-- Search model end -->
 
-    {% include "include/js.html" %}
+    {% include "include/theme/js.html" %}
 </body>
 
 </html>

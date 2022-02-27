@@ -2,15 +2,15 @@
 <!DOCTYPE html>
 <html lang="zxx">
 
-{% include "include/head.html" %}
+{% include "include/web/head.html" %}
 
 <body>
-    {% include "include/HumbergerMenu.html" %}
+    {% include "include/web/HumbergerMenu.html" %}
 
-    {% include "include/Header.html" %}
+    {% include "include/web/Header.html" %}
 
     <!-- Breadcrumb Section Begin -->
-    <section class="breadcrumb-section set-bg spad" data-setbg="img/breadcrumb-bg.jpg">
+    <section class="breadcrumb-section set-bg spad" data-setbg="{% static 'img/breadcrumb-bg.jpg' %}">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
@@ -36,7 +36,7 @@
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="cg-item">
-                                <div class="cg-pic set-bg" data-setbg="img/categories-grid/cg-1.jpg">
+                                <div class="cg-pic set-bg" data-setbg="{% static 'img/categories-grid/cg-1.jpg' %}">
                                     <div class="label"><span>Reviews</span></div>
                                 </div>
                                 <div class="cg-text">
@@ -53,7 +53,7 @@
                         </div>
                         <div class="col-lg-6">
                             <div class="cg-item">
-                                <div class="cg-pic set-bg" data-setbg="img/categories-grid/cg-2.jpg">
+                                <div class="cg-pic set-bg" data-setbg="{% static 'img/categories-grid/cg-2.jpg' %}">
                                     <div class="label"><span>Windows</span></div>
                                 </div>
                                 <div class="cg-text">
@@ -70,7 +70,7 @@
                         </div>
                         <div class="col-lg-6">
                             <div class="cg-item">
-                                <div class="cg-pic set-bg" data-setbg="img/categories-grid/cg-3.jpg">
+                                <div class="cg-pic set-bg" data-setbg="{% static 'img/categories-grid/cg-3.jpg' %}">
                                     <div class="label"><span>Hardware</span></div>
                                 </div>
                                 <div class="cg-text">
@@ -87,7 +87,7 @@
                         </div>
                         <div class="col-lg-6">
                             <div class="cg-item">
-                                <div class="cg-pic set-bg" data-setbg="img/categories-grid/cg-4.jpg">
+                                <div class="cg-pic set-bg" data-setbg="{% static 'img/categories-grid/cg-4.jpg' %}">
                                     <div class="label"><span>Playstation</span></div>
                                 </div>
                                 <div class="cg-text">
@@ -104,7 +104,7 @@
                         </div>
                         <div class="col-lg-6">
                             <div class="cg-item">
-                                <div class="cg-pic set-bg" data-setbg="img/categories-grid/cg-5.jpg">
+                                <div class="cg-pic set-bg" data-setbg="{% static 'img/categories-grid/cg-5.jpg' %}">
                                     <div class="label"><span>Reviews</span></div>
                                 </div>
                                 <div class="cg-text">
@@ -121,7 +121,7 @@
                         </div>
                         <div class="col-lg-6">
                             <div class="cg-item">
-                                <div class="cg-pic set-bg" data-setbg="img/categories-grid/cg-6.jpg">
+                                <div class="cg-pic set-bg" data-setbg="{% static 'img/categories-grid/cg-6.jpg' %}">
                                     <div class="label"><span>Windows</span></div>
                                 </div>
                                 <div class="cg-text">
@@ -138,7 +138,7 @@
                         </div>
                         <div class="col-lg-6">
                             <div class="cg-item">
-                                <div class="cg-pic set-bg" data-setbg="img/categories-grid/cg-7.jpg">
+                                <div class="cg-pic set-bg" data-setbg="{% static 'img/categories-grid/cg-7.jpg' %}">
                                     <div class="label"><span>Hardware</span></div>
                                 </div>
                                 <div class="cg-text">
@@ -155,7 +155,7 @@
                         </div>
                         <div class="col-lg-6">
                             <div class="cg-item">
-                                <div class="cg-pic set-bg" data-setbg="img/categories-grid/cg-8.jpg">
+                                <div class="cg-pic set-bg" data-setbg="{% static 'img/categories-grid/cg-8.jpg' %}">
                                     <div class="label"><span>Playstation</span></div>
                                 </div>
                                 <div class="cg-text">
@@ -172,7 +172,7 @@
                         </div>
                         <div class="col-lg-6">
                             <div class="cg-item">
-                                <div class="cg-pic set-bg" data-setbg="img/categories-grid/cg-9.jpg">
+                                <div class="cg-pic set-bg" data-setbg="{% static 'img/categories-grid/cg-9.jpg' %}">
                                     <div class="label"><span>Hardware</span></div>
                                 </div>
                                 <div class="cg-text">
@@ -189,7 +189,7 @@
                         </div>
                         <div class="col-lg-6">
                             <div class="cg-item">
-                                <div class="cg-pic set-bg" data-setbg="img/categories-grid/cg-10.jpg">
+                                <div class="cg-pic set-bg" data-setbg="{% static 'img/categories-grid/cg-10.jpg' %}">
                                     <div class="label"><span>Playstation</span></div>
                                 </div>
                                 <div class="cg-text">
@@ -247,7 +247,7 @@
                             </div>
                             <div class="trending-item">
                                 <div class="ti-pic">
-                                    <img src="img/trending/trending-5.jpg" alt="">
+                                    <img src="{% static 'img/trending/trending-5.jpg' %}" alt="">
                                 </div>
                                 <div class="ti-text">
                                     <h6><a href="#">A Monster Prom poster got hijacked for a Papa Roach concert...</a>
@@ -260,7 +260,7 @@
                             </div>
                             <div class="trending-item">
                                 <div class="ti-pic">
-                                    <img src="img/trending/trending-6.jpg" alt="">
+                                    <img src="{% static 'img/trending/trending-6.jpg' %}" alt="">
                                 </div>
                                 <div class="ti-text">
                                     <h6><a href="#">Facebook wants to read your thoughts with its augmented...</a></h6>
@@ -272,7 +272,7 @@
                             </div>
                             <div class="trending-item">
                                 <div class="ti-pic">
-                                    <img src="img/trending/trending-7.jpg" alt="">
+                                    <img src="{% static 'img/trending/trending-7.jpg' %}" alt="">
                                 </div>
                                 <div class="ti-text">
                                     <h6><a href="#">This gaming laptop with a GTX 1660 Ti and 32GB of RAM is down...</a>
@@ -285,7 +285,7 @@
                             </div>
                             <div class="trending-item">
                                 <div class="ti-pic">
-                                    <img src="img/trending/trending-8.jpg" alt="">
+                                    <img src="{% static 'img/trending/trending-8.jpg' %}" alt="">
                                 </div>
                                 <div class="ti-text">
                                     <h6><a href="#">Jalopy developer is making a game where you 'build stuff...</a></h6>
@@ -301,10 +301,10 @@
                                 <h5>Instagram</h5>
                             </div>
                             <div class="insta-pic">
-                                <img src="img/instagram/ip-1.jpg" alt="">
-                                <img src="img/instagram/ip-2.jpg" alt="">
-                                <img src="img/instagram/ip-3.jpg" alt="">
-                                <img src="img/instagram/ip-4.jpg" alt="">
+                                <img src="{% static 'img/instagram/ip-1.jpg' %}" alt="">
+                                <img src="{% static 'img/instagram/ip-2.jpg' %}" alt="">
+                                <img src="{% static 'img/instagram/ip-3.jpg' %}" alt="">
+                                <img src="{% static 'img/instagram/ip-4.jpg' %}" alt="">
                             </div>
                         </div>
                         <div class="best-of-post">
@@ -409,7 +409,7 @@
                 <div class="col-lg-4">
                     <div class="footer-about">
                         <div class="fa-logo">
-                            <a href="#"><img src="img/f-logo.png" alt=""></a>
+                            <a href="#"><img src="{% static 'img/f-logo.png' %}" alt=""></a>
                         </div>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
                             labore et dolore magna aliqua lacus vel facilisis.</p>
@@ -428,7 +428,7 @@
                         </div>
                         <div class="ec-item">
                             <div class="ec-pic">
-                                <img src="img/trending/editor-1.jpg" alt="">
+                                <img src="{% static 'img/trending/editor-1.jpg' %}" alt="">
                             </div>
                             <div class="ec-text">
                                 <h6><a href="#">A Monster Prom poster got hijacked for a Papa Roach concert...</a>
@@ -441,7 +441,7 @@
                         </div>
                         <div class="ec-item">
                             <div class="ec-pic">
-                                <img src="img/trending/editor-2.jpg" alt="">
+                                <img src="{% static 'img/trending/editor-2.jpg' %}" alt="">
                             </div>
                             <div class="ec-text">
                                 <h6><a href="#">Facebook wants to read your thoughts with its augmented...</a>
@@ -537,7 +537,7 @@
     </div>
     <!-- Search model end -->
 
-    {% include "include/js.html" %}
+    {% include "include/web/js.html" %}
 </body>
 
 </html>

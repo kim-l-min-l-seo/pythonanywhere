@@ -1,0 +1,87 @@
+{% load static %}
+<!-- Page Preloder -->
+<div id="preloder">
+    <div class="loader"></div>
+</div>
+
+<!-- Humberger Menu Begin -->
+<div class="humberger-menu-overlay"></div>
+<div class="humberger-menu-wrapper">
+    <div class="hw-logo">
+        <a href="#"><img src="{% static 'img/f-logo.png' %}" alt=""></a>
+    </div>
+    <div class="hw-menu mobile-menu">
+        <ul>
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="#">Pages <i class="fa fa-angle-down"></i></a>
+                <ul class="dropdown">
+                    <li><a href="/web/theme/pages/1/">Categories</a></li>
+                    <li><a href="/web/theme/pages/2/">Categories grid</a></li>
+                    <li><a href="/web/theme/pages/3/">Typography</a></li>
+                    <li><a href="/web/theme/pages/4/">Post default</a></li>
+                    <li><a href="/web/theme/pages/5/">Post gallery</a></li>
+                    <li><a href="/web/theme/pages/6/">Post review</a></li>
+                    <li><a href="/web/theme/pages/7/">Contact</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Reviews <i class="fa fa-angle-down"></i></a>
+                <ul class="dropdown">
+                    <li><a href="#">Playstation</a></li>
+                    <li><a href="#">Windows</a></li>
+                    <li><a href="#">Mobile</a></li>
+                    <li><a href="#">Xbox</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Windows <i class="fa fa-angle-down"></i></a>
+                <ul class="dropdown">
+                    <li><a href="#">Playstation</a></li>
+                    <li><a href="#">Windows</a></li>
+                    <li><a href="#">Mobile</a></li>
+                    <li><a href="#">Xbox</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Videos <i class="fa fa-angle-down"></i></a>
+                <ul class="dropdown">
+                    <li><a href="#">Playstation</a></li>
+                    <li><a href="#">Windows</a></li>
+                    <li><a href="#">Mobile</a></li>
+                    <li><a href="#">Xbox</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    {% if menu == 'pages' and pages == 1%}
+    <div id="mobile-menu-wrap"></div>
+        <div class="hw-copyright">
+            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+        </div>
+    {% else %}
+    <div id="mobile-menu-wrap"></div>
+    <div class="hw-copyright">
+        Copyright © 2019 Colorlib Inc. All rights reserved
+    </div>
+    {% endif %}
+
+    
+    <div class="hw-social">
+        <a href="#"><i class="fa fa-facebook"></i></a>
+        <a href="#"><i class="fa fa-twitter"></i></a>
+        <a href="#"><i class="fa fa-youtube-play"></i></a>
+        <a href="#"><i class="fa fa-instagram"></i></a>
+    </div>
+    <div class="hw-insta-media">
+        <div class="section-title">
+            <h5>Instagram</h5>
+        </div>
+        <div class="insta-pic">
+            <img src="{% static 'img/instagram/ip-1.jpg' %}" alt="">
+            <img src="{% static 'img/instagram/ip-2.jpg' %}" alt="">
+            <img src="{% static 'img/instagram/ip-3.jpg' %}" alt="">
+            <img src="{% static 'img/instagram/ip-4.jpg' %}" alt="">
+        </div>
+    </div>
+</div>
+<!-- Humberger Menu End -->

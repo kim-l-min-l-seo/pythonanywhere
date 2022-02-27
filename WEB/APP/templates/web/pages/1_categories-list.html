@@ -2,233 +2,15 @@
 <!DOCTYPE html>
 <html lang="zxx">
 
-{% include "include/head.html" %}
+{% include "include/web/head.html" %}
 
 <body>
-    <!-- Page Preloder -->
-    <div id="preloder">
-        <div class="loader"></div>
-    </div>
+    {% include "include/web/HumbergerMenu.html" %}
 
-    <!-- Humberger Menu Begin -->
-    <div class="humberger-menu-overlay"></div>
-    <div class="humberger-menu-wrapper">
-        <div class="hw-logo">
-            <a href="#"><img src="img/f-logo.png" alt=""></a>
-        </div>
-        <div class="hw-menu mobile-menu">
-            <ul>
-                <li><a href="./index.html">Home</a></li>
-                <li><a href="#">Pages <i class="fa fa-angle-down"></i></a>
-                    <ul class="dropdown">
-                        <li><a href="./categories-list.html">Categories</a></li>
-                        <li><a href="./categories-grid.html">Categories grid</a></li>
-                        <li><a href="./typography.html">Typography</a></li>
-                        <li><a href="./details-post-default.html">Post default</a></li>
-                        <li><a href="./details-post-gallery.html">Post gallery</a></li>
-                        <li><a href="./details-post-review.html">Post review</a></li>
-                        <li><a href="./contact.html">Contact</a></li>
-                    </ul>
-                </li>
-                <li><a href="#">Reviews <i class="fa fa-angle-down"></i></a>
-                    <ul class="dropdown">
-                        <li><a href="#">Playstation</a></li>
-                        <li><a href="#">Windows</a></li>
-                        <li><a href="#">Mobile</a></li>
-                        <li><a href="#">Xbox</a></li>
-                    </ul>
-                </li>
-                <li><a href="#">Windows <i class="fa fa-angle-down"></i></a>
-                    <ul class="dropdown">
-                        <li><a href="#">Playstation</a></li>
-                        <li><a href="#">Windows</a></li>
-                        <li><a href="#">Mobile</a></li>
-                        <li><a href="#">Xbox</a></li>
-                    </ul>
-                </li>
-                <li><a href="#">Videos <i class="fa fa-angle-down"></i></a>
-                    <ul class="dropdown">
-                        <li><a href="#">Playstation</a></li>
-                        <li><a href="#">Windows</a></li>
-                        <li><a href="#">Mobile</a></li>
-                        <li><a href="#">Xbox</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-        <div id="mobile-menu-wrap"></div>
-        <div class="hw-copyright">
-            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
-        </div>
-        <div class="hw-social">
-            <a href="#"><i class="fa fa-facebook"></i></a>
-            <a href="#"><i class="fa fa-twitter"></i></a>
-            <a href="#"><i class="fa fa-youtube-play"></i></a>
-            <a href="#"><i class="fa fa-instagram"></i></a>
-        </div>
-        <div class="hw-insta-media">
-            <div class="section-title">
-                <h5>Instagram</h5>
-            </div>
-            <div class="insta-pic">
-                <img src="img/instagram/ip-1.jpg" alt="">
-                <img src="img/instagram/ip-2.jpg" alt="">
-                <img src="img/instagram/ip-3.jpg" alt="">
-                <img src="img/instagram/ip-4.jpg" alt="">
-            </div>
-        </div>
-    </div>
-    <!-- Humberger Menu End -->
-
-    <!-- Header Section Begin -->
-    <header class="header-section">
-        <div class="ht-options">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6 col-md-8">
-                        <div class="ht-widget">
-                            <ul>
-                                <li><i class="fa fa-sun-o"></i> <span>20<sup>c</sup></span> London</li>
-                                <li><i class="fa fa-clock-o"></i> Aug 01, 2019</li>
-                                <li class="signup-switch signup-open"><i class="fa fa-sign-out"></i> Login / Sign up
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-4">
-                        <div class="ht-social">
-                            <a href="#"><i class="fa fa-facebook"></i></a>
-                            <a href="#"><i class="fa fa-twitter"></i></a>
-                            <a href="#"><i class="fa fa-youtube-play"></i></a>
-                            <a href="#"><i class="fa fa-instagram"></i></a>
-                            <a href="#"><i class="fa fa-envelope-o"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="logo">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12 text-center">
-                       <a href="./index.html"><img src="img/logo.png" alt=""></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="nav-options">
-            <div class="container">
-                <div class="humberger-menu humberger-open">
-                    <i class="fa fa-bars"></i>
-                </div>
-                <div class="nav-search search-switch">
-                    <i class="fa fa-search"></i>
-                </div>
-                <div class="nav-menu">
-                    <ul>
-                        <li><a href="./index.html"><span>Home</span></a></li>
-                        <li class="mega-menu"><a href="#"><span>Platform <i class="fa fa-angle-down"></i></span></a>
-                            <div class="megamenu-wrapper">
-                                <ul class="mw-nav">
-                                    <li><a href="#"><span>Playstation</span></a></li>
-                                    <li><a href="#"><span>Windows</span></a></li>
-                                    <li><a href="#"><span>Mobile</span></a></li>
-                                    <li><a href="#"><span>Xbox</span></a></li>
-                                </ul>
-                                <div class="mw-post">
-                                    <div class="mw-post-item">
-                                        <div class="mw-pic">
-                                            <img src="img/megamenu/mm-1.jpg" alt="">
-                                        </div>
-                                        <div class="mw-text">
-                                            <h6><a href="#">A Monster Prom poster got hijacked for a Papa Roach
-                                                    concert...</a></h6>
-                                            <ul>
-                                                <li><i class="fa fa-clock-o"></i> Aug 01, 2019</li>
-                                                <li><i class="fa fa-comment-o"></i> 12</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="mw-post-item">
-                                        <div class="mw-pic">
-                                            <img src="img/megamenu/mm-2.jpg" alt="">
-                                        </div>
-                                        <div class="mw-text">
-                                            <h6><a href="#">A new Borderlands 3 trailer introduces Moze and her...</a>
-                                            </h6>
-                                            <ul>
-                                                <li><i class="fa fa-clock-o"></i> Aug 01, 2019</li>
-                                                <li><i class="fa fa-comment-o"></i> 12</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="mw-post-item">
-                                        <div class="mw-pic">
-                                            <img src="img/megamenu/mm-3.jpg" alt="">
-                                        </div>
-                                        <div class="mw-text">
-                                            <h6><a href="#">Teamfight Tactics is in chaos after today's patch...</a>
-                                            </h6>
-                                            <ul>
-                                                <li><i class="fa fa-clock-o"></i> Aug 01, 2019</li>
-                                                <li><i class="fa fa-comment-o"></i> 12</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="mw-post-item">
-                                        <div class="mw-pic">
-                                            <img src="img/megamenu/mm-4.jpg" alt="">
-                                        </div>
-                                        <div class="mw-text">
-                                            <h6><a href="#">Borderlands 2 dev explains why there's mysterious
-                                                    boxes...</a></h6>
-                                            <ul>
-                                                <li><i class="fa fa-clock-o"></i> Aug 01, 2019</li>
-                                                <li><i class="fa fa-comment-o"></i> 12</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="mw-post-item">
-                                        <div class="mw-pic">
-                                            <img src="img/megamenu/mm-5.jpg" alt="">
-                                        </div>
-                                        <div class="mw-text">
-                                            <h6><a href="#">Capcom asks select fans to test new Resident Evil game</a>
-                                            </h6>
-                                            <ul>
-                                                <li><i class="fa fa-clock-o"></i> Aug 01, 2019</li>
-                                                <li><i class="fa fa-comment-o"></i> 12</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="active"><a href="#"><span>Pages <i class="fa fa-angle-down"></i></span></a>
-                            <ul class="dropdown">
-                                <li><a href="./categories-list.html">Categories</a></li>
-                                <li><a href="./categories-grid.html">Categories grid</a></li>
-                                <li><a href="./typography.html">Typography</a></li>
-                                <li><a href="./details-post-default.html">Post default</a></li>
-                                <li><a href="./details-post-gallery.html">Post gallery</a></li>
-                                <li><a href="./details-post-review.html">Post review</a></li>
-                                <li><a href="./contact.html">Contact</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="#"><span>Reviews <i class="fa fa-angle-down"></i></span></a></li>
-                        <li><a href="#"><span>Windows <i class="fa fa-angle-down"></i></span></a></li>
-                        <li><a href="#"><span>Videos <i class="fa fa-angle-down"></i></span></a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </header>
-    <!-- Header End -->
+    {% include "include/web/Header.html" %}
 
     <!-- Breadcrumb Section Begin -->
-    <section class="breadcrumb-section set-bg spad" data-setbg="img/breadcrumb-bg.jpg">
+    <section class="breadcrumb-section set-bg spad" data-setbg="{% static 'img/breadcrumb-bg.jpg' %}">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
@@ -253,7 +35,7 @@
                 <div class="col-lg-8 p-0">
                     <div class="cl-item">
                         <div class="cl-pic">
-                            <img src="img/categories-list/cl-1.jpg" alt="">
+                            <img src="{% static 'img/categories-list/cl-1.jpg' %}" alt="">
                         </div>
                         <div class="cl-text">
                             <div class="label"><span>Reviews</span></div>
@@ -269,7 +51,7 @@
                     </div>
                     <div class="cl-item">
                         <div class="cl-pic">
-                            <img src="img/categories-list/cl-2.jpg" alt="">
+                            <img src="{% static 'img/categories-list/cl-2.jpg' %}" alt="">
                         </div>
                         <div class="cl-text">
                             <div class="label"><span>Windows</span></div>
@@ -285,7 +67,7 @@
                     </div>
                     <div class="cl-item">
                         <div class="cl-pic">
-                            <img src="img/categories-list/cl-3.jpg" alt="">
+                            <img src="{% static 'img/categories-list/cl-3.jpg' %}" alt="">
                         </div>
                         <div class="cl-text">
                             <div class="label"><span>Hardware</span></div>
@@ -301,7 +83,7 @@
                     </div>
                     <div class="cl-item">
                         <div class="cl-pic">
-                            <img src="img/categories-list/cl-4.jpg" alt="">
+                            <img src="{% static 'img/categories-list/cl-4.jpg' %}" alt="">
                         </div>
                         <div class="cl-text">
                             <div class="label"><span>Playstation</span></div>
@@ -317,7 +99,7 @@
                     </div>
                     <div class="cl-item">
                         <div class="cl-pic">
-                            <img src="img/categories-list/cl-5.jpg" alt="">
+                            <img src="{% static 'img/categories-list/cl-5.jpg' %}" alt="">
                         </div>
                         <div class="cl-text">
                             <div class="label"><span>Reviews</span></div>
@@ -333,7 +115,7 @@
                     </div>
                     <div class="cl-item">
                         <div class="cl-pic">
-                            <img src="img/categories-list/cl-6.jpg" alt="">
+                            <img src="{% static 'img/categories-list/cl-6.jpg' %}" alt="">
                         </div>
                         <div class="cl-text">
                             <div class="label"><span>Windows</span></div>
@@ -349,7 +131,7 @@
                     </div>
                     <div class="cl-item">
                         <div class="cl-pic">
-                            <img src="img/categories-list/cl-7.jpg" alt="">
+                            <img src="{% static 'img/categories-list/cl-7.jpg' %}" alt="">
                         </div>
                         <div class="cl-text">
                             <div class="label"><span>Hardware</span></div>
@@ -365,7 +147,7 @@
                     </div>
                     <div class="cl-item">
                         <div class="cl-pic">
-                            <img src="img/categories-list/cl-8.jpg" alt="">
+                            <img src="{% static 'img/categories-list/cl-8.jpg' %}" alt="">
                         </div>
                         <div class="cl-text">
                             <div class="label"><span>Playstation</span></div>
@@ -421,7 +203,7 @@
                             </div>
                             <div class="trending-item">
                                 <div class="ti-pic">
-                                    <img src="img/trending/trending-5.jpg" alt="">
+                                    <img src="{% static 'img/trending/trending-5.jpg' %}" alt="">
                                 </div>
                                 <div class="ti-text">
                                     <h6><a href="#">A Monster Prom poster got hijacked for a Papa Roach concert...</a>
@@ -434,7 +216,7 @@
                             </div>
                             <div class="trending-item">
                                 <div class="ti-pic">
-                                    <img src="img/trending/trending-6.jpg" alt="">
+                                    <img src="{% static 'img/trending/trending-6.jpg' %}" alt="">
                                 </div>
                                 <div class="ti-text">
                                     <h6><a href="#">Facebook wants to read your thoughts with its augmented...</a></h6>
@@ -446,7 +228,7 @@
                             </div>
                             <div class="trending-item">
                                 <div class="ti-pic">
-                                    <img src="img/trending/trending-7.jpg" alt="">
+                                    <img src="{% static 'img/trending/trending-7.jpg' %}" alt="">
                                 </div>
                                 <div class="ti-text">
                                     <h6><a href="#">This gaming laptop with a GTX 1660 Ti and 32GB of RAM is down...</a>
@@ -459,7 +241,7 @@
                             </div>
                             <div class="trending-item">
                                 <div class="ti-pic">
-                                    <img src="img/trending/trending-8.jpg" alt="">
+                                    <img src="{% static 'img/trending/trending-8.jpg' %}" alt="">
                                 </div>
                                 <div class="ti-text">
                                     <h6><a href="#">Jalopy developer is making a game where you 'build stuff...</a></h6>
@@ -475,10 +257,10 @@
                                 <h5>Instagram</h5>
                             </div>
                             <div class="insta-pic">
-                                <img src="img/instagram/ip-1.jpg" alt="">
-                                <img src="img/instagram/ip-2.jpg" alt="">
-                                <img src="img/instagram/ip-3.jpg" alt="">
-                                <img src="img/instagram/ip-4.jpg" alt="">
+                                <img src="{% static 'img/instagram/ip-1.jpg' %}" alt="">
+                                <img src="{% static 'img/instagram/ip-2.jpg' %}" alt="">
+                                <img src="{% static 'img/instagram/ip-3.jpg' %}" alt="">
+                                <img src="{% static 'img/instagram/ip-4.jpg' %}" alt="">
                             </div>
                         </div>
                         <div class="best-of-post">
@@ -583,7 +365,7 @@
                 <div class="col-lg-4">
                     <div class="footer-about">
                         <div class="fa-logo">
-                            <a href="#"><img src="img/f-logo.png" alt=""></a>
+                            <a href="#"><img src="{% static 'img/f-logo.png' %}" alt=""></a>
                         </div>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
                             labore et dolore magna aliqua lacus vel facilisis.</p>
@@ -602,7 +384,7 @@
                         </div>
                         <div class="ec-item">
                             <div class="ec-pic">
-                                <img src="img/trending/editor-1.jpg" alt="">
+                                <img src="{% static 'img/trending/editor-1.jpg' %}" alt="">
                             </div>
                             <div class="ec-text">
                                 <h6><a href="#">A Monster Prom poster got hijacked for a Papa Roach concert...</a>
@@ -615,7 +397,7 @@
                         </div>
                         <div class="ec-item">
                             <div class="ec-pic">
-                                <img src="img/trending/editor-2.jpg" alt="">
+                                <img src="{% static 'img/trending/editor-2.jpg' %}" alt="">
                             </div>
                             <div class="ec-text">
                                 <h6><a href="#">Facebook wants to read your thoughts with its augmented...</a>
@@ -709,7 +491,7 @@
     </div>
     <!-- Search model end -->
 
-    {% include "include/js.html" %}
+    {% include "include/web/js.html" %}
 </body>
 
 </html>
