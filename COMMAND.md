@@ -42,3 +42,16 @@
 ## 3.1 WEB 디렉터리를 프로젝트 디렉터리로 만들기
     
     django-admin startproject config . 
+
+
+=====================================================
+
+# www.pythonanywhere.com
+## https://www.pythonanywhere.com/user/BlackCode42/
+
+    git clone https://github.com/IIBlackCode/pythonanywhere.git
+    $ virtualenv --python=python3.7 venv
+    $ source venv/bin/activate
+    $ pip install django
+
+    $ rm -r pythonanywhere/
