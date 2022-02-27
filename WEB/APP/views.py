@@ -5,7 +5,8 @@ from django.shortcuts import render
 def index(request):
     return HttpResponse(
                         "<a href='https://github.com/IIBlackCode/pythonanywhere'>Github</a><br>"
-                        + "<a href='http://127.0.0.1:8000/theme/index/x'>Local</a><br>"
+                        + "<a href='http://127.0.0.1:8000/theme/index/x'>Local Theme</a><br>"
+                        + "<a href='http://127.0.0.1:8000/web/index/x'>Local web</a><br>"
                         + "<a href='https://www.pythonanywhere.com/'>pythonanywhere</a><br>"
                         + "<a href='https://blackcode42.pythonanywhere.com/theme/index/x'>Theme URL</a><br>"
                         + "<a href='https://blackcode42.pythonanywhere.com/web/index/x'>Web URL</a><br>"

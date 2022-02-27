@@ -9,7 +9,9 @@ class Theme :
         print("page : ",pages)
         
         context = {
-            'url' : "theme"
+            'url' : "theme",
+            'menu': menu,
+            'pages': pages,
         }
         
         if (menu == "index" or menu == "home") and pages == "x":   
@@ -31,6 +33,9 @@ class Theme :
                 return render(request, './theme/'+menu+'/6_details-post-review.html', context)
             elif pages == "7" :
                 return render(request, './theme/'+menu+'/7_contact.html', context)
+            else : 
+                # return HttpResponse("개발 진행중 2022.02.22 "+menu)
+                return render(request, './theme/404.html', context)
         else : 
             # return HttpResponse("개발 진행중 2022.02.22 "+menu)
             return render(request, './theme/404.html', context)
