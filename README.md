@@ -5,7 +5,7 @@
     os : windows 10
     language : python
     배포툴 : https://www.pythonanywhere.com/
-    url : https://blackcode42.pythonanywhere.com/
+    url<https://blackcode42.pythonanywhere.com/> : https://blackcode42.pythonanywhere.com/
 
 ## 1. GIT 연결/연동
 
