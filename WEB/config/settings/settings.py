@@ -13,7 +13,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
 
 # Quick-start development settings - unsuitable for production
@@ -122,8 +122,8 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 # 2022.02.22 static 디렉토리 추가
+STATIC_ROOT = BASE_DIR / 'static/'
 import os
-# STATIC_ROOT = BASE_DIR / 'static/'
 STATICFILES_DIRS = [
     BASE_DIR / 'static',
     os.path.join(BASE_DIR,"static")
