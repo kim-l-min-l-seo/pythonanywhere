@@ -21,4 +21,5 @@ from APP import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('APP.urls')),
+    path('appLogin/', views.login, name="index"),
 ]

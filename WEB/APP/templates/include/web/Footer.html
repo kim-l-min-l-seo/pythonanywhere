@@ -86,7 +86,7 @@
                                 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                             </p>
                         </div>
-                    {% elif menu =='pages' %}
+                    {% else %}
                     <div class="ca-text">Copyright &copy; 2021 Colorlib Inc. All rights reserved</div>
                     {% endif %}
                 </div>
@@ -106,6 +106,49 @@
 </footer>
 <!-- Footer Section End -->
 
+<!-- Login Up Section Begin -->
+<div class="loginup-section">
+    <div class="loginup-close"><i class="fa fa-close"></i></div>
+    <div class="signup-text">
+        <div class="container">
+            <div class="signup-title">
+                <h2>LOGIN</h2>
+                <p>Fill out the form below to recieve a free and confidential</p>
+            </div>
+            <form method="post" action="{% url 'APP:login' %}" class="signup-form">
+                {% csrf_token %}
+                {% if form.errors %}
+                    {% for field in form %}
+                        {% for error in field.errors %}  <!-- 필드 오류를 출력한다. -->
+                            <div class="alert alert-danger">
+                                <strong>{{ field.label }}</strong>
+                                {{ error }}
+                            </div>
+                        {% endfor %}
+                    {% endfor %}
+                    {% for error in form.non_field_errors %}   <!-- 넌필드 오류를 출력한다. -->
+                        <div class="alert alert-danger">
+                            <strong>{{ error }}</strong>
+                        </div>
+                    {% endfor %}
+                {% endif %}
+                <div class="sf-input-list">
+                    <input type="text" class="input-value" name="username" id="username" placeholder="User Name*" value="{{ form.username.value|default_if_none:'' }}">
+                    <input type="Password" class="input-value" name="password" id="password" placeholder="Password" value="{{ form.password.value|default_if_none:'' }}">
+                </div>
+                <div class="radio-check">
+                    <label for="rc-agree">I agree with the term & conditions
+                        <input type="checkbox" id="rc-agree">
+                        <span class="checkbox"></span>
+                    </label>
+                </div>
+                <button type="submit"><span>REGISTER NOW</span></button>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- Login Up Section End -->
+
 <!-- Sign Up Section Begin -->
 <div class="signup-section">
     <div class="signup-close"><i class="fa fa-close"></i></div>
@@ -115,7 +158,7 @@
                 <h2>Sign up</h2>
                 <p>Fill out the form below to recieve a free and confidential</p>
             </div>
-            <form action="#" class="signup-form">
+            <form method="post" action="#" class="signup-form">
                 <div class="sf-input-list">
                     <input type="text" class="input-value" placeholder="User Name*">
                     <input type="text" class="input-value" placeholder="Password">
