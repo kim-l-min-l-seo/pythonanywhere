@@ -60,6 +60,17 @@
         $('.signup-section').fadeOut(400);
     });
 
+    // Login Up Form
+    $('.loginup-switch').on('click', function () {
+        console.log("TEST loginup-switch");
+        $('.loginup-section').fadeIn(400);
+    });
+
+    $('.loginup-close').on('click', function () {
+        console.log("TEST loginup-close");
+        $('.loginup-section').fadeOut(400);
+    });
+
     /*------------------
 		Navigation
 	--------------------*/
