@@ -11,6 +11,3 @@ def index(request):
                         + "<a href='https://blackcode42.pythonanywhere.com/theme/index/x'>Theme URL</a><br>"
                         + "<a href='https://blackcode42.pythonanywhere.com/web/index/x'>Web URL</a><br>"
                         )
-
-def login(request):
-    print("TEST");

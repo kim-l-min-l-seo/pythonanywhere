@@ -9,8 +9,13 @@
                             <ul>
                                 <li><i class="fa fa-sun-o"></i> <span>20<sup>c</sup></span> London</li>
                                 <li><i class="fa fa-clock-o"></i> Aug 01, 2019</li>
+                                
+                                {% if user.is_authenticated %}
+                                <li><a class="nav-link" href="{% url 'APP:logout' %}">{{ user.username }} (로그아웃)</a></li>
+                                {% else %}
                                 <li class="loginup-switch loginup-open"><i class="fa fa-sign-out"></i> Login</li>
                                 <li class="signup-switch signup-open"><i class="fa fa-sign-out"></i> Sign up</li>
+                                {% endif %}
                             </ul>
                         </div>
                     </div>

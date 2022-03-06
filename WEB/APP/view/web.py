@@ -12,7 +12,7 @@ class Web :
             'url' : "web"
         }
         
-        if (menu == "index" or menu == "home") and pages == "x":   
+        if (menu == "index" or menu == "home") and pages == "x" or (menu == "login" or menu == "logout") and pages == "success":   
             return render(request, './web/index.html', context)
         elif menu == "main" and pages == "x":
             return render(request, './web/main.html', context)
@@ -30,8 +30,8 @@ class Web :
             elif pages == "6" :
                 return render(request, './web/'+menu+'/6_details-post-review.html', context)
             elif pages == "7" :
-                return render(request, './web/'+menu+'/7_contact.html', context)
+                return render(request, './web/'+menu+'/7_contact.html', context)        
+      
         else : 
             # return HttpResponse("개발 진행중 2022.02.22 "+menu)
             return render(request, './web/404.html', context)
-        
