@@ -30,7 +30,10 @@ class Web :
             elif pages == "6" :
                 return render(request, './web/'+menu+'/6_details-post-review.html', context)
             elif pages == "7" :
-                return render(request, './web/'+menu+'/7_contact.html', context)        
+                return render(request, './web/'+menu+'/7_contact.html', context)
+        elif menu == "JavaScript" :
+            if pages == "1":
+                   return render(request, './web/'+menu+'/1_jquery.html', context)
       
         else : 
             # return HttpResponse("개발 진행중 2022.02.22 "+menu)

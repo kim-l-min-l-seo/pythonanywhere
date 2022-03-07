@@ -1,0 +1,126 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="zxx">
+
+{% include "include/web/head.html" %}
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script>
+//1. 선택자
+$(function(){
+    // 직접 선택자
+    $(".wrap_1").css("border","1px solid orange");          // class가 wrap_1인 div태그를 선택해서 css 적용
+    // 근접 선택자
+    $(".wrap_1 p").css("background-color","yellow");        // wrap_1의 자식태그인 p를 선택해서 노란색으로 표시
+    $(".active").next("p").css("background-color","aqua");  // class가 active인요소의 다음에 나오는 요소인 p를 선택
+    // 위치 선택자
+    $(".wrap_2 p").eq(2).css("background-color","red");     // p태그중 index가 2번인 p태그에 적용
+    // 속성 선택자
+    $("input[type=text]").css({"background-color":"orange"});     // input태그중 type이 text인 태그를 선택
+    // 객체 조작
+    $(".wrap_1 p").eq(1).removeClass("active");             // active 클래스 삭제
+    $(".wrap_1").append("<p>append tag test</p>");          // p태그 삽입
+});
+</script>
+<body>
+    {% include "include/web/HumbergerMenu.html" %}
+
+    {% include "include/web/Header.html" %}
+
+    <!-- Breadcrumb Section Begin -->
+    <section class="breadcrumb-section set-bg spad" data-setbg="{% static 'img/breadcrumb-bg.jpg' %}">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <div class="breadcrumb-text">
+                        <h3>Contact us</h3>
+                        <div class="bt-option">
+                            <a href="./home.html">Home</a>
+                            <span>Contact</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Breadcrumb Section End -->
+
+    <!-- Contact Section Begin -->
+    <section class="contact-section spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="contact-text">
+                        <div class="contact-title">
+                            <h3>선택자</h3>
+                            <p>선택자는 HTML 요소를 선택하여 가져온다.</p>
+                            <p>기본 선택자 <br> 직접 선택자, 근접 선택자</p>
+                            <p>탐색 선택자 <br> 위치 선택자, 속성 선택자</p>
+                            <p>객체 조작   <br> 선택한 요소 삭제, 생성, 복제, 속성 변경</p>
+                        </div>
+                        <div class="contact-form">
+                            <div class="dt-leave-comment">
+                                <pre placeholder="Message">
+            $(function){
+                $("요소 선택").css("속성","값");
+                $(".wrap_1").css("border","1px solid orange");
+            });
+
+            DOM (Document Object Model) : HTML 문서 객체 구조
+
+
+            //1. 선택자
+$(function(){
+    // 직접 선택자
+    $(".wrap_1").css("border","1px solid orange");          // class가 wrap_1인 div태그를 선택해서 css 적용
+    // 근접 선택자
+    $(".wrap_1 p").css("background-color","yellow");        // wrap_1의 자식태그인 p를 선택해서 노란색으로 표시
+    $(".active").next("p").css("background-color","aqua");  // class가 active인요소의 다음에 나오는 요소인 p를 선택
+    // 위치 선택자
+    $(".wrap_2 p").eq(2).css("background-color","red");     // p태그중 index가 2번인 p태그에 적용
+    // 속성 선택자
+    $("input[type=text]").css({"background-color":"orange"});     // input태그중 type이 text인 태그를 선택
+    // 객체 조작
+    $(".wrap_1 p").eq(1).removeClass("active");             // active 클래스 삭제
+    $(".wrap_1").append("<p>append tag test</p>");          // p태그 삽입
+});
+                                </pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ---------------------------------------------------- -->
+    <hr>
+    <div class="wrap_1">
+		<p>텍스트1</p>
+		<p class="active">내용2</p>
+		<p><a href="#">네이버</a></p>
+		<p>
+				<input type="text" value="Hello">
+		</p>
+	</div>
+	<div class="wrap_2"> 
+		<p>내용5</p>
+		<p>내용6</p>
+        <p>index2</p>
+        <p>index3</p>
+	</div>
+	<div class="wrap_3">
+		<div>
+            <p>내용7</p>
+            <p>내용8</p>
+		</div>
+	</div>
+
+    <hr>
+    <!-- ---------------------------------------------------- -->
+
+    {% include "include/web/Footer.html" %}
+
+    {% include "include/web/js.html" %}
+</body>
+
+</html>

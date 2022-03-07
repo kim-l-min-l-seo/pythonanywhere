@@ -35,7 +35,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12 text-center">
-                       <a href="/web/web/index/x/"><img src="{% static 'img/logo.png' %}" alt=""></a>
+                       <a href="/web/index/x/"><img src="{% static 'img/logo.png' %}" alt=""></a>
                     </div>
                 </div>
             </div>
@@ -176,7 +176,12 @@
                                 {% else %}
                                 <li>
                                 {% endif %}
-                                    <a href="#"><span>Reviews <i class="fa fa-angle-down"></i></span></a>
+                                    <a href="#">
+                                        <span>JavaScript <i class="fa fa-angle-down"></i></span>
+                                    </a>
+                                    <ul class="dropdown">
+                                        <li><a href="/web/JavaScript/1">jQuery</a></li>
+                                    </ul>
                                 </li>
                                 
                                 {% if menu == 'Windows' %}
