@@ -72,5 +72,5 @@ class Theme :
             return render(request, './theme/admin/11/01.html', context)
         else : 
             # return HttpResponse("개발 진행중 2022.02.22 "+menu)
-            return render(request, './theme/404.html', context)
+            return render(request, './theme/admin/404.html', context)
         
