@@ -20,4 +20,8 @@ def index(request):
                         + "<h1>Server</h1>"
                         + "<a href='https://blackcode42.pythonanywhere.com/theme/index/x'>Theme URL</a><br>"
                         + "<a href='https://blackcode42.pythonanywhere.com/web/index/x'>Web URL</a><br>"
+                        + "<hr>"
+                        + "<a href='https://blackcode42.pythonanywhere.com/theme/XXX1/0001/01'>Server Theme Admin</a><br>"
+                        + "<a href='https://blackcode42.pythonanywhere.com/theme/XX1X/index/x/'>Server Theme Game</a><br>"
+                        + "<a href='https://blackcode42.pythonanywhere.com/theme/XX11/0001/01'>Server Theme Industrious</a><br>"
                         )
