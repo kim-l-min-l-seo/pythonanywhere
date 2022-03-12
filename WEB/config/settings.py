@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'APP',                          # 2022.02.21 APP 추가
+    'THEME',                        # 2022.03.13 APP 추가
 ]
 
 MIDDLEWARE = [
