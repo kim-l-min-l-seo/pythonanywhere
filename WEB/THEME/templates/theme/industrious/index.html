@@ -6,6 +6,7 @@
 	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
 -->
 <html>
+	{% block content %}
 	{% include "include/theme/industrious/head.html" %}
 	<body class="is-preload">
 
@@ -147,6 +148,6 @@
 			</section>
 
 		{% include "include/theme/industrious/footer.html" %}
-
+	{% endblock %}
 	</body>
 </html>
