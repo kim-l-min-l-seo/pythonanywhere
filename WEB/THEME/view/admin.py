@@ -87,5 +87,7 @@ class Theme :
         else : 
             # return HttpResponse("개발 진행중 2022.02.22 "+menu)
             context['title'] = 'Feather'
-            return render(request, './'+url+'/'+fileName+'/404.html', context)
+            return render(request, './'+url+'/game/404.html', context)
+        
+        return render(request, './'+url+'/game/404.html', context)
         
