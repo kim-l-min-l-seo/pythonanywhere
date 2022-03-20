@@ -115,7 +115,7 @@
                 <h2>LOGIN</h2>
                 <p>Fill out the form below to recieve a free and confidential</p>
             </div>
-            <form method="post" action="{% url 'APP:game_login' %}" class="signup-form">
+            <form method="post" action="{% url 'THEME:game_login' %}" class="signup-form">
                 {% csrf_token %}
                 {% if form.errors %}
                     {% for field in form %}

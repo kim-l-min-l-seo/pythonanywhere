@@ -17,6 +17,6 @@ urlpatterns = [
     path('XX1X/<menu>/<pages>/',        GameTheme.url),
     path('XX11/<menu>/<pages>/', IndustriousTheme.url),
     
-    path('web/login/', auth_views.LoginView.as_view(template_name='web/index.html'), name='login'),
-    path('web/logout/', auth_views.LogoutView.as_view(), name='logout'),
+    path('game/login/', auth_views.LoginView.as_view(template_name='theme/game/index.html'), name='game_login'),
+    path('game/logout/', auth_views.LogoutView.as_view(), name='game_logout'),
 ]

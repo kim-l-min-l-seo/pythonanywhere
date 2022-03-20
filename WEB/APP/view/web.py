@@ -13,7 +13,7 @@ class Web :
         }
         
         if (menu == "index" or menu == "home") and pages == "x" or (menu == "login" or menu == "logout") and pages == "success":   
-            return render(request, './web/index.html', context)
+            return render(request, './web/game/index.html', context)
         elif menu == "main" and pages == "x":
             return render(request, './web/main.html', context)
         elif menu == "pages" :
