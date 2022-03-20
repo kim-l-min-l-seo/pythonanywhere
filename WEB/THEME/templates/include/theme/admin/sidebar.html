@@ -66,13 +66,17 @@
                 </li>
                 {% if menu == '0110' %}
                 <li class="sidebar-item active">
+                    <a data-target="#ui" data-toggle="collapse" class="sidebar-link collapsed" aria-expanded="true">
+                        <i class="align-middle" data-feather="briefcase"></i> <span class="align-middle">UI Elements</span>
+                    </a>
+                    <ul id="ui" class="sidebar-dropdown list-unstyled collapse show" data-parent="#sidebar">
                 {% else %}
                 <li class="sidebar-item">
-                {% endif %}
                     <a data-target="#ui" data-toggle="collapse" class="sidebar-link collapsed">
                         <i class="align-middle" data-feather="briefcase"></i> <span class="align-middle">UI Elements</span>
                     </a>
-                    <ul id="ui" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
+                    <ul id="ui" class="sidebar-dropdown list-unstyled collapse" data-parent="#sidebar">
+                {% endif %}
                         <li class="sidebar-item"><a class="sidebar-link" href="/{{url}}/{{html}}/0110/01/">Alerts</a></li>
                         <li class="sidebar-item"><a class="sidebar-link" href="/{{url}}/{{html}}/0110/02/">Buttons</a></li>
                         <li class="sidebar-item"><a class="sidebar-link" href="/{{url}}/{{html}}/0110/03/">Cards</a></li>
@@ -95,13 +99,17 @@
 
                 {% if menu == '1000' %}
                 <li class="sidebar-item active">
+                    <a data-target="#forms" data-toggle="collapse" class="sidebar-link collapsed" aria-expanded="true">
+                        <i class="align-middle" data-feather="check-circle"></i> <span class="align-middle">Forms</span>
+                    </a>
+                    <ul id="forms" class="sidebar-dropdown list-unstyled collapse show" data-parent="#sidebar">
                 {% else %}
                 <li class="sidebar-item">
-                {% endif %}
                     <a data-target="#forms" data-toggle="collapse" class="sidebar-link collapsed">
                         <i class="align-middle" data-feather="check-circle"></i> <span class="align-middle">Forms</span>
                     </a>
                     <ul id="forms" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
+                {% endif %}
                         <li class="sidebar-item"><a class="sidebar-link" href="/{{url}}/{{html}}/1000/01/">Form Layouts</a></li>
                         <li class="sidebar-item"><a class="sidebar-link" href="/{{url}}/{{html}}/1000/02/">Basic Inputs</a></li>
                     </ul>

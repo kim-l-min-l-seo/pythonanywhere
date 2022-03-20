@@ -26,7 +26,7 @@ class Theme :
             fileName = 'industrious'
         
         # HTML path = url/filename(html)/menu/pages
-        print("URL : ", './'+url+'/'+fileName+'/'+menu+'(2)/'+pages+'.html')
+        print("URL : ", './'+url+'/'+fileName+'/'+menu+'/'+pages+'.html')
         
         if (menu == "index" or menu == "0001") and pages == "01":
             context['title'] = 'Alerts'
