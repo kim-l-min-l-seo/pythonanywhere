@@ -9,12 +9,17 @@
     <link rel="stylesheet" type="text/css" href="{% static 'pybo/bootstrap.min.css' %}">
     <!-- pybo CSS -->
     <link rel="stylesheet" type="text/css" href="{% static 'pybo/style.css' %}">
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="{% static 'pybo/bootstrap.min.js' %}"></script>
     <title>Hello, pybo!</title>
 </head>
 <body>
+<!-- 네비게이션바 -->
+{% include "pybo/navbar.html" %}
 <!-- 기본 템플릿 안에 삽입될 내용 Start -->
 {% block content %}
 {% endblock %}
 <!-- 기본 템플릿 안에 삽입될 내용 End -->
+<!-- Bootstrap JS -->
 </body>
 </html>
