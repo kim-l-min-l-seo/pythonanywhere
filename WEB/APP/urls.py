@@ -5,6 +5,7 @@ from django.contrib.auth import views as auth_views
 from . import views
 from .view.web import Web
 from .view.pybo import pybo, forms
+from .view.SoundExtraction import YouTube
 
 app_name = 'APP'
 
@@ -21,4 +22,7 @@ urlpatterns = [
     path('web/<menu>/<pages>/', Web.url),
     path('web/login/',  auth_views.LoginView.as_view(template_name='web/game/index.html'),  name='game_login'),
     path('web/logout/', auth_views.LogoutView.as_view(),                                    name='game_logout'),
+    
+    # ============ web  ============ #
+    path('down/<menu>/<url>/', YouTube.down),    
 ]
