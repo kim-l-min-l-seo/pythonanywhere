@@ -55,3 +55,8 @@
     $ pip install django
 
     $ rm -r pythonanywhere/
+
+=====================================================
+## 2022.04.14 음원추출 관련 라이브러리 설치
+
+    pip install pytube
