@@ -34,7 +34,7 @@ def answer_create(request, question_id):
             answer.create_date = timezone.now()
             answer.question = question
             answer.save()
-            return redirect('pybo:detail', question_id=question.id)
+            return redirect('APP:pybo_detail', question_id=question.id)
     else:
         form = AnswerForm()
     context = {'question': question, 'form': form}

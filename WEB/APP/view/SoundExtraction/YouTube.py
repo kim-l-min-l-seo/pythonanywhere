@@ -12,17 +12,17 @@ def down(request, menu, url):
     
     if request.method == 'POST':
         
-        filedialog.askopenfile(
-            initialdir='path', 
-            title='select file', 
-            filetypes=(('png files', '*.png'), 
-                ('all files', '*.*')))
+        # filedialog.askopenfile(
+        #     initialdir='path', 
+        #     title='select file', 
+        #     filetypes=(('png files', '*.png'), 
+        #         ('all files', '*.*')))
         dataUrl = request.POST.get('dataUrl')
         print(dataUrl)
         
         yt = YouTube(dataUrl)
-        vids = yt.streams.all()
-        
+        # vids = yt.streams.all()
+        yt.streams.filter(only_audio=True).first().download()
         # for i in range(len(vids)):
         #     print(i,'. ',vids[i])
         # file = open(yt.streams.filter(only_audio=True).first().download(),'w')
@@ -34,8 +34,7 @@ def down(request, menu, url):
         # # file = request.FILES['file']
         # fs = FileSystemStorage()
     
-        
-        context = { 'vids':vids}
+        context = { 'vids': ""}
         return render(request, './web/game/index.html', context)
     
 def downVideo(request,url):

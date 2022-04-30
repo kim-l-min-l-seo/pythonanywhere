@@ -3,7 +3,9 @@ from django.urls import path
 from django.contrib.auth import views as auth_views
 
 from . import views
-from .view.web import Web
+from .view.admin import Web as admin
+from .view.game import Web as game
+from .view.industrious import Web as industrious
 from .view.pybo import pybo, forms
 from .view.SoundExtraction import YouTube
 
@@ -18,11 +20,18 @@ urlpatterns = [
     path('pybo/answer/create/<int:question_id>/',   pybo.answer_create,     name='pybo_answer_create'),
     path('pybo/question/create/',                   pybo.question_create,   name='pybo_question_create'),
     
-    # ============ web  ============ #
-    path('web/<menu>/<pages>/', Web.url),
-    path('web/login/',  auth_views.LoginView.as_view(template_name='web/game/index.html'),  name='game_login'),
-    path('web/logout/', auth_views.LogoutView.as_view(),                                    name='game_logout'),
+    # ============ web admin ============ #
+    path('BLACKCODE/XXX1/<menu>/<pages>/'   ,admin.url),
     
-    # ============ web  ============ #
+    # ============ web game ============ #
+    path('BLACKCODE/XX1X/<menu>/<pages>/'   ,game.url),
+    path('BLACKCODE/XX1X/login/'            ,auth_views.LoginView.as_view(template_name='web/game/index.html'),  name='game_login'),
+    path('BLACKCODE/XX1X/logout/'           ,auth_views.LogoutView.as_view(),                                    name='game_logout'),
+    
+    # ============ web industrious ============ #
+    path('BLACKCODE/XX11/<menu>/<pages>/', industrious.url),
+    
     path('down/<menu>/<url>/', YouTube.down),    
+    
+    
 ]

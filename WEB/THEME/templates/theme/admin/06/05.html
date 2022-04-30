@@ -1,301 +1,282 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'include/theme/admin/base.html' %}
+{% block content %}
 
-{% include "include/theme/admin/head.html" %}
+<main class="content">
+	<div class="container-fluid p-0">
 
-<body>
-	<div class="wrapper">
-		{% include "include/theme/admin/sidebar.html" %}
+		<h1 class="h3 mb-3">Grid</h1>
 
-		<div class="main">
-			{% include "include/theme/admin/navbar.html" %}
-
-			<main class="content">
-				<div class="container-fluid p-0">
-
-					<h1 class="h3 mb-3">Grid</h1>
-
-					<div class="card">
-						<div class="card-header">
-							<h5 class="card-title">Grid system</h5>
-							<h6 class="card-subtitle text-muted">Powerful mobile-first flexbox grid</h6>
-						</div>
-						<div class="card-body">
-							<div class="row">
-								<div class="col-md-12 text-center">
-									<div class="card bg-light py-2 py-md-3 border">
-										<div class="card-body">
-											.col-md-12
-										</div>
-									</div>
-								</div>
+		<div class="card">
+			<div class="card-header">
+				<h5 class="card-title">Grid system</h5>
+				<h6 class="card-subtitle text-muted">Powerful mobile-first flexbox grid</h6>
+			</div>
+			<div class="card-body">
+				<div class="row">
+					<div class="col-md-12 text-center">
+						<div class="card bg-light py-2 py-md-3 border">
+							<div class="card-body">
+								.col-md-12
 							</div>
-							<!-- /.row -->
-
-							<div class="row">
-								<div class="col-md-6 text-center">
-									<div class="card bg-light py-2 py-md-3 border">
-										<div class="card-body">
-											.col-md-6
-										</div>
-									</div>
-								</div>
-								<div class="col-md-6 text-center">
-									<div class="card bg-light py-2 py-md-3 border">
-										<div class="card-body">
-											.col-md-6
-										</div>
-									</div>
-								</div>
-							</div>
-							<!-- /.row -->
-
-							<div class="row">
-								<div class="col-md-4 text-center">
-									<div class="card bg-light py-2 py-md-3 border">
-										<div class="card-body">
-											.col-md-4
-										</div>
-									</div>
-								</div>
-								<div class="col-md-4 text-center">
-									<div class="card bg-light py-2 py-md-3 border">
-										<div class="card-body">
-											.col-md-4
-										</div>
-									</div>
-								</div>
-								<div class="col-md-4 text-center">
-									<div class="card bg-light py-2 py-md-3 border">
-										<div class="card-body">
-											.col-md-4
-										</div>
-									</div>
-								</div>
-							</div>
-							<!-- /.row -->
-
-							<div class="row">
-								<div class="col-md-3 text-center">
-									<div class="card bg-light py-2 py-md-3 border">
-										<div class="card-body">
-											.col-md-3
-										</div>
-									</div>
-								</div>
-								<div class="col-md-3 text-center">
-									<div class="card bg-light py-2 py-md-3 border">
-										<div class="card-body">
-											.col-md-3
-										</div>
-									</div>
-								</div>
-								<div class="col-md-3 text-center">
-									<div class="card bg-light py-2 py-md-3 border">
-										<div class="card-body">
-											.col-md-3
-										</div>
-									</div>
-								</div>
-								<div class="col-md-3 text-center">
-									<div class="card bg-light py-2 py-md-3 border">
-										<div class="card-body">
-											.col-md-3
-										</div>
-									</div>
-								</div>
-							</div>
-							<!-- /.row -->
-
-							<div class="row">
-								<div class="col-md-2 text-center">
-									<div class="card bg-light py-2 py-md-3 border">
-										<div class="card-body">
-											.col-md-2
-										</div>
-									</div>
-								</div>
-								<div class="col-md-2 text-center">
-									<div class="card bg-light py-2 py-md-3 border">
-										<div class="card-body">
-											.col-md-2
-										</div>
-									</div>
-								</div>
-								<div class="col-md-2 text-center">
-									<div class="card bg-light py-2 py-md-3 border">
-										<div class="card-body">
-											.col-md-2
-										</div>
-									</div>
-								</div>
-								<div class="col-md-2 text-center">
-									<div class="card bg-light py-2 py-md-3 border">
-										<div class="card-body">
-											.col-md-2
-										</div>
-									</div>
-								</div>
-								<div class="col-md-2 text-center">
-									<div class="card bg-light py-2 py-md-3 border">
-										<div class="card-body">
-											.col-md-2
-										</div>
-									</div>
-								</div>
-								<div class="col-md-2 text-center">
-									<div class="card bg-light py-2 py-md-3 border">
-										<div class="card-body">
-											.col-md-2
-										</div>
-									</div>
-								</div>
-							</div>
-							<!-- /.row -->
-
-							<div class="row d-none d-xxl-flex">
-								<div class="col-md-1 text-center">
-									<div class="card bg-light py-2 py-md-3 border">
-										<div class="card-body">
-											.col-md-1
-										</div>
-									</div>
-								</div>
-								<div class="col-md-1 text-center">
-									<div class="card bg-light py-2 py-md-3 border">
-										<div class="card-body">
-											.col-md-1
-										</div>
-									</div>
-								</div>
-								<div class="col-md-1 text-center">
-									<div class="card bg-light py-2 py-md-3 border">
-										<div class="card-body">
-											.col-md-1
-										</div>
-									</div>
-								</div>
-								<div class="col-md-1 text-center">
-									<div class="card bg-light py-2 py-md-3 border">
-										<div class="card-body">
-											.col-md-1
-										</div>
-									</div>
-								</div>
-								<div class="col-md-1 text-center">
-									<div class="card bg-light py-2 py-md-3 border">
-										<div class="card-body">
-											.col-md-1
-										</div>
-									</div>
-								</div>
-								<div class="col-md-1 text-center">
-									<div class="card bg-light py-2 py-md-3 border">
-										<div class="card-body">
-											.col-md-1
-										</div>
-									</div>
-								</div>
-								<div class="col-md-1 text-center">
-									<div class="card bg-light py-2 py-md-3 border">
-										<div class="card-body">
-											.col-md-1
-										</div>
-									</div>
-								</div>
-								<div class="col-md-1 text-center">
-									<div class="card bg-light py-2 py-md-3 border">
-										<div class="card-body">
-											.col-md-1
-										</div>
-									</div>
-								</div>
-								<div class="col-md-1 text-center">
-									<div class="card bg-light py-2 py-md-3 border">
-										<div class="card-body">
-											.col-md-1
-										</div>
-									</div>
-								</div>
-								<div class="col-md-1 text-center">
-									<div class="card bg-light py-2 py-md-3 border">
-										<div class="card-body">
-											.col-md-1
-										</div>
-									</div>
-								</div>
-								<div class="col-md-1 text-center">
-									<div class="card bg-light py-2 py-md-3 border">
-										<div class="card-body">
-											.col-md-1
-										</div>
-									</div>
-								</div>
-								<div class="col-md-1 text-center">
-									<div class="card bg-light py-2 py-md-3 border">
-										<div class="card-body">
-											.col-md-1
-										</div>
-									</div>
-								</div>
-							</div>
-							<!-- /.row -->
-
-							<div class="row">
-								<div class="col-md-8 text-center">
-									<div class="card bg-light py-2 py-md-3 border">
-										<div class="card-body">
-											.col-md-8
-										</div>
-									</div>
-								</div>
-								<div class="col-md-4 text-center">
-									<div class="card bg-light py-2 py-md-3 border">
-										<div class="card-body">
-											.col-md-4
-										</div>
-									</div>
-								</div>
-							</div>
-							<!-- /.row -->
-
-							<div class="row">
-								<div class="col-md-3 text-center">
-									<div class="card bg-light py-2 py-md-3 border">
-										<div class="card-body">
-											.col-md-3
-										</div>
-									</div>
-								</div>
-								<div class="col-md-6 text-center">
-									<div class="card bg-light py-2 py-md-3 border">
-										<div class="card-body">
-											.col-md-6
-										</div>
-									</div>
-								</div>
-								<div class="col-md-3 text-center">
-									<div class="card bg-light py-2 py-md-3 border">
-										<div class="card-body">
-											.col-md-3
-										</div>
-									</div>
-								</div>
-							</div>
-							<!-- /.row -->
 						</div>
 					</div>
-
 				</div>
-			</main>
+				<!-- /.row -->
 
-			{% include "include/theme/admin/footer.html" %}
+				<div class="row">
+					<div class="col-md-6 text-center">
+						<div class="card bg-light py-2 py-md-3 border">
+							<div class="card-body">
+								.col-md-6
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6 text-center">
+						<div class="card bg-light py-2 py-md-3 border">
+							<div class="card-body">
+								.col-md-6
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- /.row -->
+
+				<div class="row">
+					<div class="col-md-4 text-center">
+						<div class="card bg-light py-2 py-md-3 border">
+							<div class="card-body">
+								.col-md-4
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 text-center">
+						<div class="card bg-light py-2 py-md-3 border">
+							<div class="card-body">
+								.col-md-4
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 text-center">
+						<div class="card bg-light py-2 py-md-3 border">
+							<div class="card-body">
+								.col-md-4
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- /.row -->
+
+				<div class="row">
+					<div class="col-md-3 text-center">
+						<div class="card bg-light py-2 py-md-3 border">
+							<div class="card-body">
+								.col-md-3
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 text-center">
+						<div class="card bg-light py-2 py-md-3 border">
+							<div class="card-body">
+								.col-md-3
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 text-center">
+						<div class="card bg-light py-2 py-md-3 border">
+							<div class="card-body">
+								.col-md-3
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 text-center">
+						<div class="card bg-light py-2 py-md-3 border">
+							<div class="card-body">
+								.col-md-3
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- /.row -->
+
+				<div class="row">
+					<div class="col-md-2 text-center">
+						<div class="card bg-light py-2 py-md-3 border">
+							<div class="card-body">
+								.col-md-2
+							</div>
+						</div>
+					</div>
+					<div class="col-md-2 text-center">
+						<div class="card bg-light py-2 py-md-3 border">
+							<div class="card-body">
+								.col-md-2
+							</div>
+						</div>
+					</div>
+					<div class="col-md-2 text-center">
+						<div class="card bg-light py-2 py-md-3 border">
+							<div class="card-body">
+								.col-md-2
+							</div>
+						</div>
+					</div>
+					<div class="col-md-2 text-center">
+						<div class="card bg-light py-2 py-md-3 border">
+							<div class="card-body">
+								.col-md-2
+							</div>
+						</div>
+					</div>
+					<div class="col-md-2 text-center">
+						<div class="card bg-light py-2 py-md-3 border">
+							<div class="card-body">
+								.col-md-2
+							</div>
+						</div>
+					</div>
+					<div class="col-md-2 text-center">
+						<div class="card bg-light py-2 py-md-3 border">
+							<div class="card-body">
+								.col-md-2
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- /.row -->
+
+				<div class="row d-none d-xxl-flex">
+					<div class="col-md-1 text-center">
+						<div class="card bg-light py-2 py-md-3 border">
+							<div class="card-body">
+								.col-md-1
+							</div>
+						</div>
+					</div>
+					<div class="col-md-1 text-center">
+						<div class="card bg-light py-2 py-md-3 border">
+							<div class="card-body">
+								.col-md-1
+							</div>
+						</div>
+					</div>
+					<div class="col-md-1 text-center">
+						<div class="card bg-light py-2 py-md-3 border">
+							<div class="card-body">
+								.col-md-1
+							</div>
+						</div>
+					</div>
+					<div class="col-md-1 text-center">
+						<div class="card bg-light py-2 py-md-3 border">
+							<div class="card-body">
+								.col-md-1
+							</div>
+						</div>
+					</div>
+					<div class="col-md-1 text-center">
+						<div class="card bg-light py-2 py-md-3 border">
+							<div class="card-body">
+								.col-md-1
+							</div>
+						</div>
+					</div>
+					<div class="col-md-1 text-center">
+						<div class="card bg-light py-2 py-md-3 border">
+							<div class="card-body">
+								.col-md-1
+							</div>
+						</div>
+					</div>
+					<div class="col-md-1 text-center">
+						<div class="card bg-light py-2 py-md-3 border">
+							<div class="card-body">
+								.col-md-1
+							</div>
+						</div>
+					</div>
+					<div class="col-md-1 text-center">
+						<div class="card bg-light py-2 py-md-3 border">
+							<div class="card-body">
+								.col-md-1
+							</div>
+						</div>
+					</div>
+					<div class="col-md-1 text-center">
+						<div class="card bg-light py-2 py-md-3 border">
+							<div class="card-body">
+								.col-md-1
+							</div>
+						</div>
+					</div>
+					<div class="col-md-1 text-center">
+						<div class="card bg-light py-2 py-md-3 border">
+							<div class="card-body">
+								.col-md-1
+							</div>
+						</div>
+					</div>
+					<div class="col-md-1 text-center">
+						<div class="card bg-light py-2 py-md-3 border">
+							<div class="card-body">
+								.col-md-1
+							</div>
+						</div>
+					</div>
+					<div class="col-md-1 text-center">
+						<div class="card bg-light py-2 py-md-3 border">
+							<div class="card-body">
+								.col-md-1
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- /.row -->
+
+				<div class="row">
+					<div class="col-md-8 text-center">
+						<div class="card bg-light py-2 py-md-3 border">
+							<div class="card-body">
+								.col-md-8
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 text-center">
+						<div class="card bg-light py-2 py-md-3 border">
+							<div class="card-body">
+								.col-md-4
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- /.row -->
+
+				<div class="row">
+					<div class="col-md-3 text-center">
+						<div class="card bg-light py-2 py-md-3 border">
+							<div class="card-body">
+								.col-md-3
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6 text-center">
+						<div class="card bg-light py-2 py-md-3 border">
+							<div class="card-body">
+								.col-md-6
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 text-center">
+						<div class="card bg-light py-2 py-md-3 border">
+							<div class="card-body">
+								.col-md-3
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- /.row -->
+			</div>
 		</div>
+
 	</div>
-
-	<script src="{% static 'admin/js/app.js' %}"></script>
-
-</body>
-
-</html>
+</main>
+{% endblock %}
