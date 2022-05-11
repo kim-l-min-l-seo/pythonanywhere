@@ -1,19 +1,9 @@
-{% load static %}
-<!DOCTYPE HTML>
-<!--
-	Industrious by TEMPLATED
-	templated.co @templatedco
-	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
--->
-<html>
-	{% include "include/theme/industrious/head.html" %}
-	<body class="is-preload">
-
-		{% include "include/theme/industrious/nav.html" %}
+{% extends 'include/industrious/base.html' %}
+{% block content %}
 
 		<!-- Heading -->
 			<div id="heading" >
-				<h1>Elements</h1>
+				<h1>{{title}}</h1>
 			</div>
 
 		<!-- Main -->
@@ -450,7 +440,4 @@
 				</div>
 			</section>
 
-		{% include "include/theme/industrious/footer.html" %}
-
-	</body>
-</html>
+{% endblock %}
