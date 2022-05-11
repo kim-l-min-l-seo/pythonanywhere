@@ -33,5 +33,5 @@ class Web :
         
         else : 
             # return HttpResponse("개발 진행중 2022.02.22 "+menu)
-            return render(request, './'+url+'/404.html', context)
+            return render(request, './'+url+'/404.html')
         

@@ -1,16 +1,5 @@
-{% load static %}
-<!DOCTYPE HTML>
-<!--
-	Industrious by TEMPLATED
-	templated.co @templatedco
-	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
--->
-<html>
-	{% block content %}
-	{% include "include/theme/industrious/head.html" %}
-	<body class="is-preload">
-
-		{% include "include/theme/industrious/nav.html" %}
+{% extends 'include/theme/industrious/base.html' %}
+{% block content %}
 
 		<!-- Banner -->
 			<section id="banner">
@@ -147,7 +136,4 @@
 				</div>
 			</section>
 
-		{% include "include/theme/industrious/footer.html" %}
-	{% endblock %}
-	</body>
-</html>
+{% endblock %}
