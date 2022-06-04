@@ -7,21 +7,24 @@ class Web :
     def url(request, menu, pages):
         url = 'BLACKCODE'
         web = 'XX11'
+        ver = 'VER 1.0.0'
         print("menu : ", menu)
         print("page : ",pages)
         
         if (menu == "index" or menu == "0000") and pages == "XX":
             context = {
-                'url': url, 
-                'menu': menu,
-                'title': ''
+                'url'   : url, 
+                'menu'  : menu,
+                'title' : '',
+                'ver'   : ver
             }
             return render(request, './'+url+'/'+web+'/0000_index.html', context)
         elif menu == "0010" and pages == "XX":
             context = {
                 'url' : url,
                 'menu': menu,
-                'title':'Generic Page'
+                'title':'Generic Page',
+                'ver'   : ver
             }
             return render(request, './'+url+'/'+web+'/generic.html', context)
         
@@ -31,16 +34,18 @@ class Web :
             context = {
                 'url' : url,
                 'menu': menu,
-                'title':'Release Note'
+                'title':'Release Note',
+                'ver'   : ver
             }
             return render(request, './'+url+'/'+web+'/1111_Release Note.html', context)
         elif menu == "9999" and pages == "XX":
             context = {
                 'url' : url,
                 'menu': menu,
-                'title':'Elements'
+                'title':'Elements',
+                'ver'   : ver
             }
-            return render(request, './'+url+'/'+web+'/elements.html', context)
+            return render(request, './'+url+'/'+web+'/9999_elements.html', context)
         
         else : 
             # return HttpResponse("개발 진행중 2022.02.22 "+menu)

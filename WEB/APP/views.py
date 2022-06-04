@@ -15,7 +15,7 @@ def index(request):
                         + "<h1>LOCAL WEB</h1>"
                         + "<a href='http://127.0.0.1:8000/BLACKCODE/XXX1/0001/01'>Local Theme Admin</a><br>"
                         + "<a href='http://127.0.0.1:8000/BLACKCODE/XX1X/index/x'>Local Theme Game</a><br>"
-                        + "<a href='http://127.0.0.1:8000/BLACKCODE/XX11/0001/01'>Local Theme Industrious</a><br>"
+                        + "<a href='http://127.0.0.1:8000/BLACKCODE/XX11/0000/XX'>Local Theme Industrious</a><br>"
                         + "<br><br><br>"
                         + "<h1>Server</h1>"
                         + "<a href='https://blackcode42.pythonanywhere.com/theme/index/x'>Theme URL</a><br>"
