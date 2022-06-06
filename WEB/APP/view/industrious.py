@@ -19,6 +19,33 @@ class Web :
                 'ver'   : ver
             }
             return render(request, './'+url+'/'+web+'/0000_index.html', context)
+        
+        elif menu == "0001" :
+            if pages == "XX" :
+                context = {
+                    'url' : url,
+                    'menu': menu,
+                    'title':'회원가입',
+                    'ver'   : ver
+                }
+                return render(request, './'+url+'/'+web+'/generic.html', context)    
+            elif pages == "Join" :
+                context = {
+                    'url' : url,
+                    'menu': menu,
+                    'title':'회원가입',
+                    'ver'   : ver
+                }
+                return render(request, './'+url+'/'+web+'/0001/popupJoin.html', context) 
+            elif pages == "Login" :
+                context = {
+                    'url' : url,
+                    'menu': menu,
+                    'title':'로그인',
+                    'ver'   : ver
+                }
+                return render(request, './'+url+'/'+web+'/0001/popupLogin.html', context) 
+            
         elif menu == "0010" and pages == "XX":
             context = {
                 'url' : url,

@@ -8,6 +8,7 @@ from .view.game import Web as game
 from .view.industrious import Web as industrious
 from .view.pybo import pybo, forms
 from .view.SoundExtraction import YouTube
+from .view.XX11.account import Account
 
 app_name = 'APP'
 
@@ -30,6 +31,7 @@ urlpatterns = [
     
     # ============ web industrious ============ #
     path('BLACKCODE/XX11/<menu>/<pages>/', industrious.url),
+    path('BLACKCODE/XX11/SignUp/', Account.signUp, name="SignUp"),
     
     path('down/<menu>/<url>/', YouTube.down),    
     
