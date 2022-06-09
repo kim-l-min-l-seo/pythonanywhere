@@ -22,7 +22,7 @@
     left: 50%;
 
     width: 565px;
-    height: 75%;
+    height: 86%;
 
     padding: 40px;
 
@@ -35,6 +35,9 @@
     transform: translateX(-50%) translateY(-50%);
 }
 
+.test {
+    padding-top: -0.5rem !important;
+}
 .btn-close {
     padding: 0 1.75rem !important;
     margin-left: auto;

@@ -3,7 +3,7 @@
 		<form id="user-signup" enctype="multipart/form-data">
 		{% csrf_token %}
 		<!-- Model header -->
-			<div class="row gtr-uniform">
+			<div class="row gtr-uniform test">
 				<div class="col-4 col-12-xsmall">
 					<input type="text" placeholder="Ajax input test" class="form-control" id="test" name="test">
 				</div>
@@ -19,13 +19,13 @@
 
 			<hr>
 			<!-- Model Content -->
-			<div class="row gtr-uniform">
+			<div class="row gtr-uniform test">
 				<div class="col-12">
 					<input type="text" placeholder="E-Mail ex. adc@abc.com" class="form-control" id="signup-user-email" name="email">
 				</div>
 
 				<div class="col-12">
-					<input type="text" placeholder="생년월일 8자리 ex. adc@abc.com" class="form-control" id="signup-user-email" name="birth">
+					<input type="text" placeholder="생년월일 8자리 ex. 90.12.31" class="form-control" id="signup-user-email" name="birth">
 				</div>
 
 				<div class="col-6 col-12-xsmall">
@@ -53,7 +53,7 @@
 			<hr>
 
 			<!-- Model Footer -->
-			<div class="col-12">
+			<div class="col-12 test">
 				<ul class="actions fit">
 					<li>
 						<a class="button primary fit btn-signup">회원가입</a>
