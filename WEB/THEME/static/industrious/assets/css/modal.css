@@ -39,7 +39,11 @@
     padding-top: -0.5rem !important;
 }
 .btn-close {
-    padding: 0 1.75rem !important;
+    /* padding: 0 1.75rem !important; */
     margin-left: auto;
     float:right;
+}
+
+.row.gtr-uniform>*{
+    padding-top: 2.5rem !important;
 }

@@ -126,7 +126,7 @@
         }
     });
 
-    modal.addEventListener('click', (event) => {
+    {% comment %} modal.addEventListener('click', (event) => {
     if (event.target === modal) {
         modal.classList.toggle('show');
 
@@ -134,7 +134,7 @@
             body.style.overflow = 'auto';
             }
         }
-    });
+    }); {% endcomment %}
 
 
 
@@ -180,9 +180,15 @@ $(function(){
         }).done(function(data){
 
 			if(data.result){
-				alert("result",'data.test');
+				alert("회원가입 성공");
+                console.log("data",data)
 			}else{
 				alert("회원가입 실패");
+                console.log("data",data)
+
+                if(data.msg != null){
+                    alert(data.msg)
+                }
 			}
 			/*
             // request 보낸 url에서 회원가입 정상 진행해도 무방하여 {'works':True}를 JsonResponse로 보낸 경우

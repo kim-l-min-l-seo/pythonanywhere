@@ -28,3 +28,8 @@ class Board(models.Model):
     title = models.CharField(max_length=200, verbose_name='글 제목', help_text='100자 이내')                                    # 게시글 제목
     content = models.TextField()                                        # 게시글 내용
     create_date = models.DateTimeField()                                # 게시판 날짜
+    
+    
+# ALTER TABLE auth_user ADD birth char(8) NULL;
+# ALTER TABLE auth_user ADD nickname varchar(25) NULL;
+# ALTER TABLE auth_user ADD tel varchar(25) NULL;

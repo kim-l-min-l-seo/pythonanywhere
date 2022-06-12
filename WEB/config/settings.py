@@ -136,13 +136,13 @@ STATICFILES_DIRS = [
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # 로그인 성공후 이동하는 URL
-LOGIN_REDIRECT_URL = '/web/login/success/'
+# LOGIN_REDIRECT_URL = '/web/login/success/'
 
 # 로그아웃시 이동하는 URL
-LOGOUT_REDIRECT_URL = '/web/logout/success/'
+# LOGOUT_REDIRECT_URL = '/web/logout/success/'
 
 # 폴트 값 대신에 직접 만든 모델을 사용
-AUTH_USER_MODEL = 'auth.User'
+# AUTH_USER_MODEL = 'auth.User'
 AUTH_USER_MODEL = 'APP.User'
 # AUTH_USER_MODEL = '{app-name}.{User-model-name}'
 # AUTH_USER_MODEL = 'api.User'

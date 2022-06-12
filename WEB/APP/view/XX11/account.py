@@ -6,6 +6,7 @@ from django.http import HttpResponseRedirect, HttpResponse ,JsonResponse
 from datetime import timedelta, date, time, datetime
 import sqlite3
 
+Querry = ""
 
 currentTime = datetime.now().strftime('%Y-%m-%d')
 class Account:
@@ -20,9 +21,10 @@ class Account:
             print(">>> ",test)
             print("currentTime",currentTime)
             
+            # 1. Data POST방식 수신
             email       = request.POST.get("email");
             birth       = request.POST.get("birth");
-            name        = request.POST.get("name");
+            username        = request.POST.get("name");
             nickName    = request.POST.get("nickName");
             profile     = request.POST.get("profile");
             phoneNumber = request.POST.get("phoneNumber");
@@ -31,25 +33,68 @@ class Account:
             
             print("email        >>> ",email)
             print("birth        >>> ",birth)
-            print("name         >>> ",name)
+            print("username     >>> ",username)
             print("nickName     >>> ",nickName)
             print("profile      >>> ",profile)
             print("phoneNumber  >>> ",phoneNumber)
             print("password     >>> ",password)
             print("password2    >>> ",password2)
 
+            # 2. Data Check
+            if email == None or email == "":
+                msg = "Please enter your email address"
+                print(msg)
+                context = {
+                        "result"    : False,
+                        "msg"       : msg
+                        }
+                return JsonResponse(context)
+            if username == None or username == "":
+                msg = "Please enter your Name"
+                print(msg)
+                context = {
+                        "result"    : False,
+                        "msg"       : msg
+                        }
+                return JsonResponse(context)
+            if phoneNumber == None or phoneNumber == "":
+                msg = "Please enter your phoneNumber"
+                print(msg)
+                context = {
+                        "result"    : False,
+                        "msg"       : msg
+                        }
+                return JsonResponse(context)
+            if (password != password2) or password == None or password == "" or password2 == None or password2 == "":
+                msg = "Please check your password"
+                print(msg)
+                context = {
+                        "result"    : False,
+                        "msg"       : msg
+                        }
+                return JsonResponse(context)
+            
+            # TEST Querry
             with conn:
-                cur.execute("select count(*) from auth_user ")
+                
+                Querry = "select count(*) from APP_user "
+                
+                cur.execute(Querry)
                 total = cur.fetchone()
-                print('총 수강생 수 : ',total[0])
+                print('[TEST] Querry = '+Querry+' \n 총 수강생 수 : ',total[0])
+                
             try :
                 with conn:
-                    cur.execute("insert into auth_user (email, password, username, first_name, last_name, is_superuser, is_staff, is_active, date_joined) values ('"+email+"','"+password+"','"+name+"', '"+name+"', '"+name+"', '3', '3', '3', '"+currentTime+"') ")
-                    curfet = cur.fetchone()
-                    print("curfet :",curfet)
+                    
+                    Querry = " insert into APP_user (email, password, username, is_superuser, is_staff, is_active, date_joined) values ('"+email+"','"+password+"','"+username+"', '3', '3', '3', '"+currentTime+"') "
+                    
+                    cur.execute(Querry)
+                    execute = cur.fetchone()
+                    print("execute :",execute)
             except Exception as e:
                 print('Exception : ',e)
-                context = {"result" : False}
-            return JsonResponse(context,status = 400)
-                
+                context = {"result" : False, "msg" : e}
+                return JsonResponse(context,status = 400)
+        
+        context = {"result" : True}
         return JsonResponse(context,status=200)
