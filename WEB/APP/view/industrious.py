@@ -36,7 +36,7 @@ class Web :
                     'title':'회원가입',
                     'ver'   : ver
                 }
-                return render(request, './'+url+'/'+web+'/0001/popupJoin.html', context) 
+                return render(request, './'+url+'/'+web+'/0001/generic.html', context) 
             elif pages == "Login" :
                 context = {
                     'url' : url,

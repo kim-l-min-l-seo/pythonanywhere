@@ -1,37 +1,134 @@
-{% load static %}
-<!DOCTYPE HTML>
-<!--
-	Industrious by TEMPLATED
-	templated.co @templatedco
-	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
--->
-<html>
-	{% include "include/industrious/head.html" %}
-	<body class="is-preload">
-		<header id="header"></header>
-		<!-- Heading -->
-		<div id="heading" >
-			<h1>{{title}}</h1>
-		</div>
-
-		<!-- Main -->
-		<section id="main" class="wrapper">
-			<div class="inner">
-				<div class="content">
-					<header>
-						<h2>Feugiat consequat</h2>
-					</header>
-					<p>Lorem ipsum dolor sit accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Magna et cursus lorem faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod tempus. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac sed amet praesent. Nunc lacinia ante nunc ac gravida lorem ipsum dolor sit amet dolor feugiat consequat. </p>
-					<p>Lorem ipsum dolor sit accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Magna et cursus lorem faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod tempus. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac sed amet praesent. Nunc lacinia ante nunc ac gravida lorem ipsum dolor sit amet dolor feugiat consequat. </p>
-					<hr />
-					<h3>Magna odio tempus commodo</h3>
-					<p>In arcu accumsan arcu adipiscing accumsan orci ac. Felis id enim aliquet. Accumsan ac integer lobortis commodo ornare aliquet accumsan erat tempus amet porttitor. Ante commodo blandit adipiscing integer semper orci eget. Faucibus commodo adipiscing mi eu nullam accumsan morbi arcu ornare odio mi adipiscing nascetur lacus ac interdum morbi accumsan vis mi accumsan ac praesent.</p>
-					<p>Felis sagittis eget tempus primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Magna sed etiam ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus lorem ipsum dolor sit amet nullam.</p>
+<div class="modal_Login">
+    <div class="modal_body">
+		<form id="user-signup" enctype="multipart/form-data">
+		{% csrf_token %}
+		<!-- Model header -->
+			<div class="row gtr-uniform test">
+				<div class="col-4 col-12-xsmall">
+					{% comment %} <input type="text" placeholder="Ajax input test" class="form-control" id="test" name="test"> {% endcomment %}
+				</div>
+				<div class="col-4 col-12-xsmall">
+					<h3>로그인</h3>
+				</div>
+				<div class="col-4 col-12-xsmall">
+					<a type="button" class="btn-close">
+						[X]
+					</a>
 				</div>
 			</div>
-		</section>
 
-		{% include "include/industrious/footer.html" %}
+			<hr>
+			<!-- Model Content -->
+			<div class="row gtr-uniform test">
+				<div class="col-12">
+					<input type="text" placeholder="E-Mail ex. adc@abc.com" class="form-control" id="login-user-email" name="login-email">
+				</div>
 
-	</body>
-</html>
+				<div class="col-12">
+					<input type="password" class="form-control" id="login-user-password" name="login-password">
+				</div>
+
+			</div>
+
+			<hr>
+
+			<!-- Model Footer -->
+			<div class="col-12 test">
+				<ul class="actions fit">
+					<li>
+						<a class="button primary fit btn-signup">Login</a>
+					</li>
+					<li>
+						<a class="button primary fit btn-close">돌아가기</a>
+					</li>
+				</ul>
+
+			</div>
+		</from>
+    </div>
+</div>
+
+<script type="text/javascript">
+
+	{% comment %} const body = document.querySelector('body'); {% endcomment %}
+    const modal_Login = document.querySelector('.modal_Login');
+    const btnOpenPopup2 = document.querySelector('.btn-open-LoginPopup');
+
+    btnOpenPopup2.addEventListener('click', () => {
+    modal_Login.classList.toggle('show');
+
+    if (modal_Login.classList.contains('show')) {
+        body.style.overflow = 'hidden';
+        }
+    });
+
+$(function(){
+    // 회원가입, 로그인 창 닫기
+    $('.btn-close').click(function(e){
+        // 회원가입, 로그인 창 닫을 시 현재 화면으로 새로고침
+		console.log("TEST")
+        location.reload();
+    });
+
+    // 로그인 진행
+    $('.btn-login').click(function(e){
+        e.preventDefault();
+        var url = $(this).attr('href');
+        var form = $('#user-login')[0];
+        var formData = new FormData(form);
+
+        $.ajax({
+            url : url,
+            enctype: 'multipart/form-data',
+            processData: false,
+            contentType: false,
+            cache: false,
+            method : 'POST',
+            data : formData,
+        }).done(function(data){
+            if(data.works){
+                alert('로그인되었습니다.')
+                location.reload();
+            } else if(data.wrongInformation) {
+                alert('입력된 정보와 일치하는 회원 정보가 없습니다.');
+                $('#login-user-email').val("");
+                $('#login-user-password').val("");
+
+            } else if(data.noEmail) {
+                alert('이메일 주소를 입력해주세요.');
+                $('#login-user-password').val("");
+            } else if(data.noPassword) {
+                alert('비밀번호를 입력해주세요.');
+            } else {
+                alert('정상 요청이 아닙니다.');
+            }
+        });
+    });
+
+
+    // 로그아웃 진행
+    $('.user-logout').click(function(e){
+        e.preventDefault();
+        var url = $(this).attr('href');
+        var check = confirm('로그아웃 하시겠습니까?');
+        if(check==true){
+            $.ajax({
+                url : url,
+                method : "POST",
+                data : {
+                    'csrfmiddlewaretoken' : '{{csrf_token}}',
+                },
+            }).done(function(data){
+                if(data.works){
+                    alert('로그아웃 되었습니다.');
+                    location.reload();
+                } else {
+                    alert('정상 요청이 아닙니다.');
+                }
+            });
+        } else {
+            location.reload();
+        }
+    });
+});
+</script>

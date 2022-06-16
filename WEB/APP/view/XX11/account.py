@@ -76,7 +76,6 @@ class Account:
             
             # TEST Querry
             with conn:
-                
                 Querry = "select count(*) from APP_user "
                 
                 cur.execute(Querry)
@@ -85,12 +84,12 @@ class Account:
                 
             try :
                 with conn:
-                    
-                    Querry = " insert into APP_user (email, password, username, is_superuser, is_staff, is_active, date_joined) values ('"+email+"','"+password+"','"+username+"', '3', '3', '3', '"+currentTime+"') "
-                    
+                    Querry = " insert into APP_user \n"
+                    Querry+= " (email, password, username, is_superuser, is_staff, is_active, date_joined) \n"
+                    Querry+= " values ('"+email+"','"+password+"','"+username+"', '3', '3', '3', '"+currentTime+"') "
+                    print(Querry)
                     cur.execute(Querry)
                     execute = cur.fetchone()
-                    print("execute :",execute)
             except Exception as e:
                 print('Exception : ',e)
                 context = {"result" : False, "msg" : e}

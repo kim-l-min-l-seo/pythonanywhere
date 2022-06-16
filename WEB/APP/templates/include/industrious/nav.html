@@ -4,7 +4,7 @@
     <a class="logo" href="/{{url}}/XX11/0000/XX">{{url}} <sup><a>{{ver}}</a></sup> </a>
     
     <nav>
-        <a onclick="xx11_Login()">Login</a>/<a class="btn-open-popup">join</a>
+        <a class="btn-open-LoginPopup">Login</a>/<a class="btn-open-JoinPopup" onclick="xx11_join()">join</a>
         <a href="#menu">Menu</a>
     </nav>
 </header>
@@ -19,5 +19,27 @@
         <li><a href="/{{url}}/XX11/9999/XX">Elements</a></li>
     </ul>
 </nav>
-
+<!-- CSS 깨짐 현상으로 회원가입 팝업 모달형식에서 브라우져 호출형식으로 수정 -->
+{% comment %} 
 {% include "include/industrious/0001/popupJoin.html" %}
+{% include "include/industrious/0001/popupLogin.html" %} 
+{% endcomment %}
+
+<script type="text/javascript">
+
+    function xx11_Login(){
+        alert("로그인");
+        var url = "/{{url}}/XX11/0001/Login/";
+        var name = "popup test";
+        var option = "width = 500, height = 500, top = 100, left = 200, location = no"
+        window.open(url, name, option);
+    }
+
+    function xx11_join(){
+        alert("회원가입");
+        var url = "/{{url}}/XX11/0001/Join/";
+        var name = "popup test";
+        var option = "width = 650, height = 800, top = 50%, left = 50%, location = no"
+        window.open(url, name, option);
+    }
+</script>
