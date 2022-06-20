@@ -1,10 +1,11 @@
 {% load static %}
 <!-- Header -->
 <header id="header">
-    <a class="logo" href="/{{url}}/XX11/0000/XX">{{url}} <sup><a>{{ver}}</a></sup> </a>
+    {% comment %} <a class="logo" href="/{{url}}/XX11/0000/XX">{{url}} <sup><a>{{ver}}</a></sup></a> {% endcomment %}
+    <a class="logo" href="/{{url}}/XX11/0000/XX">{{url}}</a>
     
     <nav>
-        <a class="btn-open-LoginPopup">Login</a>/<a class="btn-open-JoinPopup" onclick="xx11_join()">join</a>
+        <a class="btn-open-LoginPopup" onclick="xx11_Login()">Login</a>/<a class="btn-open-JoinPopup" onclick="xx11_join()">join</a>
         <a href="#menu">Menu</a>
     </nav>
 </header>
@@ -19,11 +20,6 @@
         <li><a href="/{{url}}/XX11/9999/XX">Elements</a></li>
     </ul>
 </nav>
-<!-- CSS 깨짐 현상으로 회원가입 팝업 모달형식에서 브라우져 호출형식으로 수정 -->
-{% comment %} 
-{% include "include/industrious/0001/popupJoin.html" %}
-{% include "include/industrious/0001/popupLogin.html" %} 
-{% endcomment %}
 
 <script type="text/javascript">
 

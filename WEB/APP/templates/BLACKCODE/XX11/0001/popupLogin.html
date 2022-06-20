@@ -1,0 +1,145 @@
+{% load static %}
+<!DOCTYPE HTML>
+<html>
+	{% include "include/industrious/head.html" %}
+	<body>
+
+<!-- Heading -->
+{% comment %} <div id="heading" >
+	<h1>{{title}}</h1>
+</div> {% endcomment %}
+
+<!-- Main -->
+<section>
+	<div class="inner">
+		<div class="content">
+
+			<form id="user-login" enctype="multipart/form-data">
+		{% csrf_token %}
+		<!-- Model header -->
+			<div class="row gtr-uniform test">
+				<div class="col-4 col-12-xsmall">
+					<input type="text" placeholder="Ajax input test" class="form-control" id="test" name="test">
+				</div>
+				<div class="col-4 col-12-xsmall">
+					<center>
+					<h3>{{title}}</h3>
+					</center>
+				</div>
+				<div class="col-4 col-12-xsmall">
+					<a type="button" class="btn-close">
+						[X]
+					</a>
+				</div>
+			</div>
+
+			<hr>
+			<!-- Model Content -->
+			<div class="row gtr-uniform test">
+				<div class="col-12">
+					<input type="text" placeholder="E-Mail ex. adc@abc.com" class="form-control" id="login-user-email" name="login_email">
+				</div>
+
+				<div class="col-12">
+					<input type="password" placeholder="비밀번호" class="form-control" id="login-user-password" name="login_password">
+				</div>
+			</div>
+
+			<hr>
+
+			<!-- Model Footer -->
+			<div class="col-12 test">
+				<ul class="actions fit">
+					<li>
+						<a class="button primary fit btn-login">로그인</a>
+					</li>
+					<li>
+						<a class="button primary fit btn-close">돌아가기</a>
+					</li>
+				</ul>
+
+			</div>
+		
+		</from>
+		</div>
+	</div>
+</section>
+
+	</body>
+</html>
+
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script type="text/javascript">
+
+    function xx11_Login(){
+        alert("로그인");
+        var url = "/{{url}}/XX11/0001/Login/";
+        var name = "popup test";
+        var option = "width = 500, height = 500, top = 100, left = 200, location = no"
+        window.open(url, name, option);
+    }
+
+    function xx11_join(){
+        alert("회원가입");
+        var url = "/{{url}}/XX11/0001/Join/";
+        var name = "popup test";
+        var option = "width = 500, height = 500, top = 100, left = 200, location = no"
+        window.open(url, name, option);
+    }
+
+$(function(){
+    // 회원가입, 로그인 창 닫기
+    $('.btn-close').click(function(e){
+        // 회원가입, 로그인 창 닫을 시 현재 화면으로 새로고침
+		console.log("TEST")
+		window.close();
+        location.reload();
+    });
+
+    // 회원가입 진행
+    $('.btn-login').click(function(e){
+        // btn-signup 클래스 부분을 클릭 시, 링크 이동 등 어떠한 행위도 동작하지 않도록 해주는 함수 -> ajax 작동 위해 필요한 선행 작업
+        e.preventDefault();
+        // btn-signup 클래스에서 'href' 속성 값을 가져와 url 변수에 저장
+        // var url = $(this).attr('href');
+		var url = "/{{url}}/XX11/Login/";
+        // user-signup 아이디(여기선 회원가입 form 태그) 부분의 html 태그를 form 변수에 저장
+        var form = $('#user-login')[0];
+        // form 태그 안에 있는 모든 input으로 입력한 value값을 'name'을 key로 하여, formData 변수에 저장 
+        // --> ex. <input type="text" placeholder="이메일 주소 입력" class="form-control" id="login-user-email" name="email"> 에서 유저가 positipman@gmail.com을 입력했다면, formData에서 key는 email, value는 positipman@gmail.com 이 된다.
+        var formData = new FormData(form);
+    
+		console.log("url >>",url);
+		console.log("formData >>",formData)
+
+        $.ajax({
+            url : url,
+            // form에 file type 이 있는 경우 enctype: 'multipart/form-data'를 설정해야 한다.
+            enctype: 'multipart/form-data',
+            // formData를 이용하기 위해서 아래 processData, contentType을 반드시 false로 설정해줘야 한다.
+            processData: false,
+            contentType: false,
+            // ajax 통신 중, cache가 남아서 갱신 데이터를 받아오지 못하는 경우 사용한다.
+            cache: false,
+            type: "POST",
+            // data로는 formData를 request로 보낸다.
+            data: formData,
+        }).done(function(data){
+
+			if(data.result){
+				alert("로그인 성공");
+                console.log("data",data)
+                window.close();
+			}else{
+				alert("로그인 실패");
+                console.log("data",data)
+
+                if(data.msg != null){
+                    alert(data.msg)
+                }
+			}
+        });
+    });
+
+});
+</script>

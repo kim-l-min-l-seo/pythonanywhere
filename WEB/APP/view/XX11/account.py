@@ -1,3 +1,4 @@
+from asyncio.windows_events import NULL
 from tkinter import E
 from tkinter.messagebox import NO
 from django.contrib import messages
@@ -24,7 +25,7 @@ class Account:
             # 1. Data POST방식 수신
             email       = request.POST.get("email");
             birth       = request.POST.get("birth");
-            username        = request.POST.get("name");
+            username    = request.POST.get("name");
             nickName    = request.POST.get("nickName");
             profile     = request.POST.get("profile");
             phoneNumber = request.POST.get("phoneNumber");
@@ -97,3 +98,62 @@ class Account:
         
         context = {"result" : True}
         return JsonResponse(context,status=200)
+    
+    def login(request):
+        conn = sqlite3.connect("db.sqlite3",check_same_thread=False)
+        cur = conn.cursor()
+        
+        if request.method == 'POST':
+            login_email     = request.POST.get("login_email");
+            login_password  = request.POST.get("login_password");
+            
+            print("login_email",    login_email,    type(login_email))
+            print("login_password", login_password, type(login_password))
+            
+            with conn:
+                Querry = " SELECT * FROM APP_user WHERE email = '"+login_email+"'"
+
+                print(Querry)
+                cur.execute(Querry)
+                password = cur.fetchone()
+            
+            print("password >>>>>>>>>>>",password)
+            count = 0;
+            # 1. 아이디 미입력 체크
+            if login_email == None or login_email == "" :
+                ++count
+                print("# 1")
+                msg = "아이디 미입력"
+                context = {"result" : False, "msg" :msg}
+                return JsonResponse(context,status = 200)
+            
+            # 2. 비밀번호 미입력 체크
+            if login_password == None or login_password == "" :
+                ++count
+                print("# 2")
+                msg = "비밀번호 미입력"
+                context = {"result" : False, "msg" :msg}
+                return JsonResponse(context,status = 200)
+                
+            # 3. 아이디 미등록 체크
+            if password == None or password == "" :
+                ++count
+                print("# 3")
+                msg = "아이디없음"
+                context = {"result" : False, "msg" :msg}
+                return JsonResponse(context,status = 200)
+                
+            # 4. 비밀번호가 맞지않음
+            if login_password != password[1] :
+                ++count
+                print("# 4")  
+                msg = "비밀번호 오류"
+                context = {"result" : False, "msg" :msg}
+                return JsonResponse(context,status=200)
+            
+            # 5. 로그인성공
+            if count == 0 :
+                print("# 5",count)   
+                msg = "로그인 성공"
+                context = {"result" : True, "msg" :msg}
+                return JsonResponse(context,status = 200)

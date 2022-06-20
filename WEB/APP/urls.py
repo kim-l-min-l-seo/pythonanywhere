@@ -30,8 +30,9 @@ urlpatterns = [
     path('BLACKCODE/XX1X/logout/'           ,auth_views.LogoutView.as_view(),                                    name='game_logout'),
     
     # ============ web industrious ============ #
-    path('BLACKCODE/XX11/<menu>/<pages>/', industrious.url),
-    path('BLACKCODE/XX11/SignUp/', Account.signUp, name="SignUp"),
+    path('BLACKCODE/XX11/<menu>/<pages>/'   , industrious.url),
+    path('BLACKCODE/XX11/SignUp/'           , Account.signUp, name="SignUp"),
+    path('BLACKCODE/XX11/Login/'            , Account.login, name="Login"),
     
     path('down/<menu>/<url>/', YouTube.down),    
     
