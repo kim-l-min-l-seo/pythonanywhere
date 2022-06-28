@@ -33,6 +33,7 @@ urlpatterns = [
     path('BLACKCODE/XX11/<menu>/<pages>/'   , industrious.url),
     path('BLACKCODE/XX11/SignUp/'           , Account.signUp, name="SignUp"),
     path('BLACKCODE/XX11/Login/'            , Account.login, name="Login"),
+    path('BLACKCODE/XX11/Logout/'           , Account.logout, name="Logout"),
     
     path('down/<menu>/<url>/', YouTube.down),    
     

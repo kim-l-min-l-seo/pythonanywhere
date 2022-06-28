@@ -127,9 +127,10 @@ $(function(){
         }).done(function(data){
 
 			if(data.result){
-				alert("로그인 성공");
+				alert(data.msg)
                 console.log("data",data)
                 window.close();
+				opener.parent.location.reload();
 			}else{
 				alert("로그인 실패");
                 console.log("data",data)

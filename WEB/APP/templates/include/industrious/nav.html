@@ -5,7 +5,21 @@
     <a class="logo" href="/{{url}}/XX11/0000/XX">{{url}}</a>
     
     <nav>
+        <a href='#'>{{request.session}}</a>
+        <!-- LOGIN [O] >> SESSION OK -->
+        {% if request.session.id %}
+        <a class="btn-open-LoginPopup" onclick="xx11_Login()">
+            {{request.session.id}}
+            {{request.session.username}} </a>
+        <a class="btn-open-LoginPopup" href="{% url 'APP:Logout' %}">
+            로그아웃
+        </a>
+
+        <!-- LOGIN [X] >> NO SESSION -->
+        {% else %}
         <a class="btn-open-LoginPopup" onclick="xx11_Login()">Login</a>/<a class="btn-open-JoinPopup" onclick="xx11_join()">join</a>
+        
+        {% endif%}
         <a href="#menu">Menu</a>
     </nav>
 </header>
@@ -14,7 +28,12 @@
 <nav id="menu">
     <ul class="links">
         <li><a href="/{{url}}/XX11/0000/XX">Home</a></li>
-        <li><a href="/{{url}}/XX11/0001/XX">회원가입</a></li>
+        <li><a href="/{{url}}/XX11/0001/Join">회원가입</a></li>
+        <li><a href="/{{url}}/XX11/0001/Login">로그인</a></li>
+
+        <li><a href="/{{url}}/XX11/0010/00">회원관리</a></li>
+        <li><a href="/{{url}}/XX11/0010/01">Profile</a></li>
+
         <li><a href="/{{url}}/XX11/0010/XX">Generic</a></li>
         <li><a href="/{{url}}/XX11/1111/XX">Release Note</a></li>
         <li><a href="/{{url}}/XX11/9999/XX">Elements</a></li>

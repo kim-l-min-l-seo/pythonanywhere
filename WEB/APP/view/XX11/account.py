@@ -115,9 +115,9 @@ class Account:
 
                 print(Querry)
                 cur.execute(Querry)
-                password = cur.fetchone()
+                member = cur.fetchone()
             
-            print("password >>>>>>>>>>>",password)
+            print("member >>>>>>>>>>>",member)
             count = 0;
             # 1. 아이디 미입력 체크
             if login_email == None or login_email == "" :
@@ -136,7 +136,7 @@ class Account:
                 return JsonResponse(context,status = 200)
                 
             # 3. 아이디 미등록 체크
-            if password == None or password == "" :
+            if member == None or member == "" :
                 ++count
                 print("# 3")
                 msg = "아이디없음"
@@ -144,7 +144,7 @@ class Account:
                 return JsonResponse(context,status = 200)
                 
             # 4. 비밀번호가 맞지않음
-            if login_password != password[1] :
+            if login_password != member[1] :
                 ++count
                 print("# 4")  
                 msg = "비밀번호 오류"
@@ -155,5 +155,40 @@ class Account:
             if count == 0 :
                 print("# 5",count)   
                 msg = "로그인 성공"
-                context = {"result" : True, "msg" :msg}
+                
+                request.session['id']           = member[0]
+                request.session['password']     = member[1]
+                request.session['last_login']   = member[2]
+                request.session['is_superuser'] = member[3]
+                request.session['username']     = member[4]
+                request.session['first_name']   = member[5]
+                request.session['last_name']    = member[6]
+                request.session['is_staff']     = member[7]
+                request.session['is_active']    = member[8]
+                request.session['date_joined']  = member[9]
+                request.session['email']        = member[10]
+
+                print("session",request.session.session_key)
+                context = {"result" : True, 
+                           "msg" :msg}
+                
                 return JsonResponse(context,status = 200)
+                # return redirect('/BLACKCODE/XX11/0000/XX')
+            
+    def logout(request):
+        # del request.session['id']
+        request.session.pop('id')
+        
+        request.session.flush()
+
+        url = 'BLACKCODE'
+        web = 'XX11'
+        ver = 'VER 1.0.0'
+        context = {
+                'url'   : url, 
+                'title' : '',
+                'ver'   : ver
+            }
+        # return render(request, './'+url+'/'+web+'/0000_index.html', context)
+        # return HttpResponse("You're logged out.")
+        return redirect('/BLACKCODE/XX11/0000/XX')

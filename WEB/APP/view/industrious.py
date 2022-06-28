@@ -47,15 +47,31 @@ class Web :
                 }
                 return render(request, './'+url+'/'+web+'/0001/popupLogin.html', context) 
             
-        elif menu == "0010" and pages == "XX":
-            context = {
-                'url' : url,
-                'menu': menu,
-                'title':'Generic Page',
-                'ver'   : ver
-            }
-            return render(request, './'+url+'/'+web+'/generic.html', context)
-        
+        elif menu == "0010" :
+            if pages == "XX":
+                context = {
+                    'url' : url,
+                    'menu': menu,
+                    'title':'Generic Page',
+                    'ver'   : ver
+                }
+                return render(request, './'+url+'/'+web+'/generic.html', context)
+            elif pages == "00" :
+                context = {
+                    'url' : url,
+                    'menu': menu,
+                    'title':'회원관리[관리자전용]',
+                    'ver'   : ver
+                }
+                return render(request, './'+url+'/'+web+'/0010/00.html', context)
+            elif pages == "01" :
+                context = {
+                    'url' : url,
+                    'menu': menu,
+                    'title':'Profile',
+                    'ver'   : ver
+                }
+                return render(request, './'+url+'/'+web+'/0010/01.html', context)
         
         
         elif (menu == "ReleaseNote" or menu == "1111") and pages == "XX":
