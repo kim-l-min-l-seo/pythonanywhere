@@ -1,6 +1,3 @@
-from asyncio.windows_events import NULL
-from tkinter import E
-from tkinter.messagebox import NO
 from django.contrib import messages
 from django.shortcuts import render, redirect
 from django.http import HttpResponseRedirect, HttpResponse ,JsonResponse
