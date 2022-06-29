@@ -74,7 +74,7 @@ class Account:
             
             # TEST Querry
             with conn:
-                Querry = "select count(*) from APP_user "
+                Querry = "select count(*) from auth_user "
                 
                 cur.execute(Querry)
                 total = cur.fetchone()
@@ -82,7 +82,7 @@ class Account:
                 
             try :
                 with conn:
-                    Querry = " insert into APP_user \n"
+                    Querry = " insert into auth_user \n"
                     Querry+= " (email, password, username, is_superuser, is_staff, is_active, date_joined) \n"
                     Querry+= " values ('"+email+"','"+password+"','"+username+"', '3', '3', '3', '"+currentTime+"') "
                     print(Querry)
@@ -108,7 +108,7 @@ class Account:
             print("login_password", login_password, type(login_password))
             
             with conn:
-                Querry = " SELECT * FROM APP_user WHERE email = '"+login_email+"'"
+                Querry = " SELECT * FROM auth_user WHERE email = '"+login_email+"'"
 
                 print(Querry)
                 cur.execute(Querry)
