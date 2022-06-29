@@ -133,7 +133,7 @@ STATICFILES_DIRS = [
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+# DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # 로그인 성공후 이동하는 URL
 # LOGIN_REDIRECT_URL = '/web/login/success/'
@@ -143,6 +143,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # 폴트 값 대신에 직접 만든 모델을 사용
 # AUTH_USER_MODEL = 'auth.User'
-AUTH_USER_MODEL = 'APP.User'
+# AUTH_USER_MODEL = 'APP.User'
 # AUTH_USER_MODEL = '{app-name}.{User-model-name}'
 # AUTH_USER_MODEL = 'api.User'
