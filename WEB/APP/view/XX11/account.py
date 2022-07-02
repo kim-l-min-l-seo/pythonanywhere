@@ -12,7 +12,7 @@ class Account:
     def signUp(request):
         conn = sqlite3.connect("db.sqlite3",check_same_thread=False)
         cur = conn.cursor()
-
+        
         if request.method == 'POST':
             
             test = request.POST.get("test");
@@ -108,6 +108,9 @@ class Account:
             conn = sqlite3.connect("db.sqlite3",check_same_thread=False)
             cur = conn.cursor()
             
+            print("conn ::",conn)
+            print("cur  ::",cur)
+                
             with conn:
                 Querry = " SELECT * FROM auth_user WHERE email = '"+login_email+"'"
 
