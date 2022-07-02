@@ -97,8 +97,6 @@ class Account:
         return JsonResponse(context,status=200)
     
     def login(request):
-        conn = sqlite3.connect("db.sqlite3",check_same_thread=False)
-        cur = conn.cursor()
         
         if request.method == 'POST':
             login_email     = request.POST.get("login_email");
@@ -106,6 +104,9 @@ class Account:
             
             print("login_email",    login_email,    type(login_email))
             print("login_password", login_password, type(login_password))
+            
+            conn = sqlite3.connect("db.sqlite3",check_same_thread=False)
+            cur = conn.cursor()
             
             with conn:
                 Querry = " SELECT * FROM auth_user WHERE email = '"+login_email+"'"
