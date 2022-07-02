@@ -11,12 +11,12 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
-import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
+# BASE_DIR = Path(__file__).resolve().parent.parent
 
 # 2022-07-03 Pythonanywhere 배포경로
-# BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__))) 
+import os
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__))) 
 print("[SETTING BASE_DIR]   ::", BASE_DIR)
 print("[SETTING DB DIR]     ::", Path(__file__).resolve().parent.parent / 'db.sqlite3')
 
@@ -27,8 +27,8 @@ print("[SETTING DB DIR]     ::", Path(__file__).resolve().parent.parent / 'db.sq
 SECRET_KEY = 'django-insecure-0&y#w=v_)upd1kfw7y!#0e_^cg6*17+q8=z1@+5yhdwa#x*np#'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-# DEBUG = False
+# DEBUG = True
+DEBUG = False
 
 # 2022.02.22 ALLOWED_HOSTS 설정, pythonanywhere 추가
 ALLOWED_HOSTS = ['*']
@@ -84,8 +84,8 @@ WSGI_APPLICATION = 'config.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-        # 'NAME': Path(__file__).resolve().parent.parent / 'db.sqlite3',
+        # 'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': Path(__file__).resolve().parent.parent / 'db.sqlite3',
     }
 }
 
