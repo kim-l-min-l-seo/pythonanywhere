@@ -14,7 +14,7 @@ from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
+# BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
@@ -23,7 +23,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-0&y#w=v_)upd1kfw7y!#0e_^cg6*17+q8=z1@+5yhdwa#x*np#'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# DEBUG = True
+DEBUG = False
 
 # 2022.02.22 ALLOWED_HOSTS 설정, pythonanywhere 추가
 ALLOWED_HOSTS = ['*']
@@ -82,6 +83,14 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+# 배포용
+import os
+DATABASES={
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
+}
 
 
 # Password validation
@@ -125,10 +134,11 @@ STATIC_URL = '/static/'
 # 2022.02.22 static 디렉토리 추가
 import os
 # STATIC_ROOT = BASE_DIR / 'static/'
-STATICFILES_DIRS = [
-    BASE_DIR / 'static',
-    os.path.join(BASE_DIR,"static")
-]
+# STATICFILES_DIRS = [
+#     BASE_DIR / 'static',
+#     os.path.join(BASE_DIR,"static")
+# ]
+STATIC_ROOT = os.path.join(BASE_DIR,'static')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field

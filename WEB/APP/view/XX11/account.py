@@ -84,7 +84,7 @@ class Account:
                 with conn:
                     Querry = " insert into auth_user \n"
                     Querry+= " (email, password, username, is_superuser, is_staff, is_active, date_joined, first_name, last_name) \n"
-                    Querry+= " values ('"+email+"','"+password+"','"+username+"', '3', '3', '3', '"+currentTime+"', 'first_name', 'last_name') "
+                    Querry+= " values ('"+email+"','"+password+"','"+username+"', '3', '미사용컬럼', '미사용컬럼', '"+currentTime+"', '미사용컬럼', '미사용컬럼') "
                     print(Querry)
                     cur.execute(Querry)
                     execute = cur.fetchone()
@@ -104,6 +104,9 @@ class Account:
             
             print("login_email",    login_email,    type(login_email))
             print("login_password", login_password, type(login_password))
+            
+            from pathlib import Path
+            print("BASEDIR ::",Path(__file__).resolve().parent.parent)
             
             conn = sqlite3.connect("db.sqlite3",check_same_thread=False)
             cur = conn.cursor()
