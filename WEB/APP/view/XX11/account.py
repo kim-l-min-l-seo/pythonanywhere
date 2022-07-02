@@ -83,8 +83,8 @@ class Account:
             try :
                 with conn:
                     Querry = " insert into auth_user \n"
-                    Querry+= " (email, password, username, is_superuser, is_staff, is_active, date_joined) \n"
-                    Querry+= " values ('"+email+"','"+password+"','"+username+"', '3', '3', '3', '"+currentTime+"') "
+                    Querry+= " (email, password, username, is_superuser, is_staff, is_active, date_joined, first_name, last_name) \n"
+                    Querry+= " values ('"+email+"','"+password+"','"+username+"', '3', '3', '3', '"+currentTime+"', 'first_name', 'last_name') "
                     print(Querry)
                     cur.execute(Querry)
                     execute = cur.fetchone()
