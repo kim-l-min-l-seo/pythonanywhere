@@ -13,10 +13,10 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 from pathlib import Path
 import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-# BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = Path(__file__).resolve().parent.parent
 
 # 2022-07-03 Pythonanywhere 배포경로
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__))) 
+# BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__))) 
 print("[SETTING BASE_DIR]   ::", BASE_DIR)
 print("[SETTING DB DIR]     ::", Path(__file__).resolve().parent.parent / 'db.sqlite3')
 
@@ -84,8 +84,8 @@ WSGI_APPLICATION = 'config.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        # 'NAME': BASE_DIR / 'db.sqlite3',
-        'NAME': Path(__file__).resolve().parent.parent / 'db.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+        # 'NAME': Path(__file__).resolve().parent.parent / 'db.sqlite3',
     }
 }
 
