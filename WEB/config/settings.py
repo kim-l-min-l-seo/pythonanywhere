@@ -80,8 +80,8 @@ WSGI_APPLICATION = 'config.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        # 'NAME': BASE_DIR.parent / 'WEB/db.sqlite3',
-        'NAME': Path(__file__).resolve().parent / 'WEB/db.sqlite3',
+        'NAME': BASE_DIR.parent / 'WEB/db.sqlite3',
+        # 'NAME': Path(__file__).resolve().parent / 'WEB/db.sqlite3',
     }
 }
 # 배포용
