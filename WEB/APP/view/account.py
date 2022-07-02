@@ -78,7 +78,7 @@ class Account:
                 
                 cur.execute(Querry)
                 total = cur.fetchone()
-                print('[TEST] Querry = '+Querry+' \n 총 수강생 수 : ',total[0])
+                print('[ TEST ] Querry = '+Querry+' \n 총 수강생 수 : ',total[0])
                 
             try :
                 with conn:
