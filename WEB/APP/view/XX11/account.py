@@ -2,13 +2,15 @@ from django.contrib import messages
 from django.shortcuts import render, redirect
 from django.http import HttpResponseRedirect, HttpResponse ,JsonResponse
 from datetime import timedelta, date, time, datetime
-from config.settings import Dir
+from config.settings import SETTING_INFO
 import sqlite3
 
 Querry = ""
-db_sqlite3 = Dir.DB_DIR
 
-currentTime = datetime.now().strftime('%Y-%m-%d')
+# Setting info
+db_sqlite3 = SETTING_INFO.DB_DIR
+currentTime = SETTING_INFO.currentTime
+
 class Account:
     
     def signUp(request):
@@ -176,12 +178,10 @@ class Account:
                            "msg" :msg}
                 
                 return JsonResponse(context,status = 200)
-                # return redirect('/BLACKCODE/XX11/0000/XX')
             
     def logout(request):
         # del request.session['id']
         request.session.pop('id')
-        
         request.session.flush()
 
         url = 'BLACKCODE'
