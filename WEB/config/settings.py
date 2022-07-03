@@ -14,11 +14,13 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 # BASE_DIR = Path(__file__).resolve().parent.parent
 
+class Dir:
+    import os
+    BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__))) 
+    DB_DIR = Path(__file__).resolve().parent.parent / 'db.sqlite3'
 # 2022-07-03 Pythonanywhere 배포경로
-import os
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__))) 
-print("[SETTING BASE_DIR]   ::", BASE_DIR)
-print("[SETTING DB DIR]     ::", Path(__file__).resolve().parent.parent / 'db.sqlite3')
+print("[SETTING BASE_DIR]   ::", Dir.BASE_DIR)
+print("[SETTING DB DIR]     ::", Dir.DB_DIR)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
@@ -85,7 +87,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         # 'NAME': BASE_DIR / 'db.sqlite3',
-        'NAME': Path(__file__).resolve().parent.parent / 'db.sqlite3',
+        'NAME': Dir.DB_DIR,
     }
 }
 
@@ -134,7 +136,7 @@ import os
 #     BASE_DIR / 'static',
 #     os.path.join(BASE_DIR,"static")
 # ]
-STATIC_ROOT = os.path.join(BASE_DIR,'static')
+STATIC_ROOT = os.path.join(Dir.BASE_DIR,'static')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field

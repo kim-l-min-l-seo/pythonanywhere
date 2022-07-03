@@ -2,15 +2,17 @@ from django.contrib import messages
 from django.shortcuts import render, redirect
 from django.http import HttpResponseRedirect, HttpResponse ,JsonResponse
 from datetime import timedelta, date, time, datetime
+from config.settings import Dir
 import sqlite3
 
 Querry = ""
+db_sqlite3 = Dir.DB_DIR
 
 currentTime = datetime.now().strftime('%Y-%m-%d')
 class Account:
     
     def signUp(request):
-        conn = sqlite3.connect("db.sqlite3",check_same_thread=False)
+        conn = sqlite3.connect(db_sqlite3,check_same_thread=False)
         cur = conn.cursor()
         
         if request.method == 'POST':
@@ -105,7 +107,7 @@ class Account:
             print("login_email",    login_email,    type(login_email))
             print("login_password", login_password, type(login_password))
             
-            conn = sqlite3.connect("db.sqlite3",check_same_thread=False)
+            conn = sqlite3.connect(db_sqlite3,check_same_thread=False)
             cur = conn.cursor()
             
             print("conn ::",conn)
