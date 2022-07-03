@@ -20,6 +20,7 @@ class Web :
             }
             return render(request, './'+url+'/'+web+'/0000_index.html', context)
         
+        # 사이트 기본기능 페이지
         elif menu == "0001" :
             if pages == "XX" :
                 context = {
@@ -46,7 +47,8 @@ class Web :
                     'ver'   : ver
                 }
                 return render(request, './'+url+'/'+web+'/0001/popupLogin.html', context) 
-            
+        
+        # 회원관련 페이지 (profile, 회원관리)
         elif menu == "0010" :
             if pages == "XX":
                 context = {
@@ -73,7 +75,18 @@ class Web :
                 }
                 return render(request, './'+url+'/'+web+'/0010/01.html', context)
         
+        # 게시판
+        elif menu == "0011" :
+            if pages == "XX":
+                context = {
+                    'url' : url,
+                    'menu': menu,
+                    'title':'[TEST]게시판',
+                    'ver'   : ver
+                }
+                return render(request, './'+url+'/'+web+'/0011/generic.html', context)
         
+        # 개발관련 페이지
         elif (menu == "ReleaseNote" or menu == "1111") and pages == "XX":
             context = {
                 'url' : url,

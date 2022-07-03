@@ -13,14 +13,17 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 # 2022-07-03 Pythonanywhere 배포경로
 class SETTING_INFO:
     # import os
+    import sqlite3
     from pathlib import Path
     from datetime import datetime
-    BASE_DIR = Path(__file__).resolve().parent.parent                       # 기본경로
-    # BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))  # 기본경로
-    DB_DIR = BASE_DIR / 'db.sqlite3'          # DB 경로
-    currentTime = datetime.now().strftime('%Y-%m-%d')                       # 현재시간
+    BASE_DIR = Path(__file__).resolve().parent.parent                           # 기본경로
+    # BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))    # 기본경로
+    DB_DIR = BASE_DIR / 'db.sqlite3'                                            # DB 경로
+    currentTime = datetime.now().strftime('%Y-%m-%d')                           # 현재시간
+    conn = sqlite3.connect(DB_DIR,check_same_thread=False)                      # DB connect
+    
     def __init__(self):                                                     # 생성자
-        print(" >>>> Setting dir info <<<< \t ")
+        print(" >>>> Setting dir info <<<< ",SETTING_INFO.currentTime)
         print("\t [SETTING BASE_DIR]   ::", SETTING_INFO.BASE_DIR)
         print("\t [SETTING DB DIR]     ::", SETTING_INFO.DB_DIR)
     

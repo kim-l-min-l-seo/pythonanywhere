@@ -10,11 +10,12 @@ Querry = ""
 # Setting info
 db_sqlite3 = SETTING_INFO.DB_DIR
 currentTime = SETTING_INFO.currentTime
-
+conn = SETTING_INFO.conn
+cur = conn.cursor()
 class Account:
     
     def signUp(request):
-        conn = sqlite3.connect(db_sqlite3,check_same_thread=False)
+        # conn = sqlite3.connect(db_sqlite3,check_same_thread=False)
         cur = conn.cursor()
         
         if request.method == 'POST':
@@ -109,7 +110,7 @@ class Account:
             print("login_email",    login_email,    type(login_email))
             print("login_password", login_password, type(login_password))
             
-            conn = sqlite3.connect(db_sqlite3,check_same_thread=False)
+            # conn = sqlite3.connect(db_sqlite3,check_same_thread=False)
             cur = conn.cursor()
             
             print("conn ::",conn)
