@@ -69,13 +69,17 @@ class Web :
                 return render(request, './'+url+'/'+web+'/0010/00.html', context)
             elif pages == "01" :
                 context = {
-                    'url' : url,
-                    'menu': menu,
-                    'title':'Profile',
+                    'url' : url, 'menu': menu, 'title':'Profile',
                     'ver'   : ver
                 }
                 return render(request, './'+url+'/'+web+'/0010/01.html', context)
-        
+            elif pages == "02" :
+                context = {
+                    'url' : url, 'menu': menu, 'title':'Session',
+                    'ver'   : ver
+                }
+                return render(request, './'+url+'/'+web+'/0010/02.html', context)
+            
         # 게시판
         elif menu == "0011" :
             if pages == "XX":

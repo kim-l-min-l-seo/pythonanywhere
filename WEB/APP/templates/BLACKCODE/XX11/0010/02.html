@@ -1,0 +1,35 @@
+{% extends 'include/industrious/base.html' %}
+{% block content %}
+
+<!-- Heading -->
+<div id="heading" >
+	<h1>{{title}}</h1>
+</div>
+
+<!-- Main -->
+<section id="main" class="wrapper">
+	<div class="inner">
+		<div class="content">
+			<header>
+				<h2>[{{request.session.id}}] {{request.session.username}} ,{{request.session.email}}</h2>
+			</header>
+			<p>ID : {{request.session.id}}</p>
+			<p>E-mail : {{request.session.email}}</p>
+			<p>password : {{request.session.password}}</p>
+			<p>username : {{request.session.username}}</p>
+			<p>is_superuser : {{request.session.is_superuser}}</p>
+			<p>birth : {{request.session.birth}}</p>
+			<p>address : {{request.session.address}}</p>
+			<hr />
+			<h3>Magna odio tempus commodo</h3>
+			<p>date_joined : {{request.session.date_joined}}</p>
+			<p>last_login : {{request.session.last_login}}</p>
+			<p>is_staff : {{request.session.is_staff}}</p>
+			<p>is_active : {{request.session.is_active}}</p>
+			<p>date_joined : {{request.session.date_joined}}</p>
+			<p>Felis sagittis eget tempus primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Magna sed etiam ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus lorem ipsum dolor sit amet nullam.</p>
+		</div>
+	</div>
+</section>
+
+{% endblock %}

@@ -166,7 +166,7 @@ class Account:
                 return JsonResponse(context,status = 200)
                 
             # 4. 비밀번호가 맞지않음
-            if login_password != member[1] :
+            if login_password != member[2] :
                 ++count
                 print("# 4")  
                 msg = "비밀번호 오류"

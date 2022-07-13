@@ -5,11 +5,10 @@
     <a class="logo" href="/{{url}}/XX11/0000/XX">{{url}}</a>
     
     <nav>
-        <a href='#'>{{request.session}}</a>
         <!-- LOGIN [O] >> SESSION OK -->
         {% if request.session.id %}
         <a class="btn-open-LoginPopup" onclick="xx11_Login()">
-            {{request.session.id}}
+            {% comment %} {{request.session.id}} {% endcomment %}
             {{request.session.username}} </a>
         <a class="btn-open-LoginPopup" href="{% url 'APP:Logout' %}">
             로그아웃
@@ -33,6 +32,7 @@
         <li><a href="/{{url}}/XX11/0001/Login">로그인</a></li>
         <li><a href="/{{url}}/XX11/0010/00">[0010|00] 회원관리</a></li>
         <li><a href="/{{url}}/XX11/0010/01">[0010|01] Profile</a></li>
+        <li><a href="/{{url}}/XX11/0010/02">[0010|02] Session</a></li>
         <li><a href="/{{url}}/XX11/0011/XX">[0011|XX] TEST게시판</a></li>
         <li><a href="/{{url}}/XX11/0010/XX">Generic</a></li>
         <li><a href="/{{url}}/XX11/1111/XX">Release Note</a></li>
