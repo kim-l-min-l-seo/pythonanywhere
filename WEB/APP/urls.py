@@ -34,6 +34,7 @@ urlpatterns = [
     path('BLACKCODE/XX11/SignUp/'           , Account.signUp, name="SignUp"),
     path('BLACKCODE/XX11/Login/'            , Account.login, name="Login"),
     path('BLACKCODE/XX11/Logout/'           , Account.logout, name="Logout"),
+    path('BLACKCODE/XX11/memberDelete/'     , Account.member_delete, name="memberDelete"),
     
     path('down/<menu>/<url>/', YouTube.down),    
     

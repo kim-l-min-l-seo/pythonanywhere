@@ -19,7 +19,7 @@ class SETTING_INFO:
     BASE_DIR = Path(__file__).resolve().parent.parent                           # 기본경로
     # BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))    # 기본경로
     DB_DIR = BASE_DIR / 'db.sqlite3'                                            # DB 경로
-    currentTime = datetime.now().strftime('%Y-%m-%d')                           # 현재시간
+    currentTime = datetime.now().strftime("%Y-%m-%d, %H:%M:%S")                 # 현재시간
     conn = sqlite3.connect(DB_DIR,check_same_thread=False)                      # DB connect
     
     def __init__(self):                                                     # 생성자
@@ -36,8 +36,8 @@ print(" >>>> Setting dir END- <<<< \t ",SETTING_INFO())
 SECRET_KEY = 'django-insecure-0&y#w=v_)upd1kfw7y!#0e_^cg6*17+q8=z1@+5yhdwa#x*np#'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = True
-DEBUG = False
+DEBUG = True
+# DEBUG = False
 
 # 2022.02.22 ALLOWED_HOSTS 설정, pythonanywhere 추가
 ALLOWED_HOSTS = ['*']
@@ -133,7 +133,7 @@ STATIC_URL = '/static/'
 
 # 2022.02.22 static 디렉토리 추가
 import os
-# STATIC_ROOT = BASE_DIR / 'static/'
+# STATIC_ROOT = SETTING_INFO.BASE_DIR / 'static/'
 STATICFILES_DIRS = [
     SETTING_INFO.BASE_DIR / 'static',
     os.path.join(SETTING_INFO.BASE_DIR,"static")

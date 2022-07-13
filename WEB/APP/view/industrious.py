@@ -2,6 +2,8 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from setuptools import Require
 
+from APP.view.XX11.Querry.Member import Member
+
 class Web :
     
     def url(request, menu, pages):
@@ -60,10 +62,9 @@ class Web :
                 return render(request, './'+url+'/'+web+'/generic.html', context)
             elif pages == "00" :
                 context = {
-                    'url' : url,
-                    'menu': menu,
+                    'url' : url, 'menu': menu, 'ver' : ver,
                     'title':'회원관리[관리자전용]',
-                    'ver'   : ver
+                    'members' : Member.select_all_member()
                 }
                 return render(request, './'+url+'/'+web+'/0010/00.html', context)
             elif pages == "01" :

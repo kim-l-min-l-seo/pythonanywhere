@@ -19,10 +19,38 @@
 				<th>회원등급(is_superuser)</th>
 				<th>가입날짜(date_joined)</th>
 				<th>로그인날짜(last_login)</th>
+				<th>생년월일(birth)</th>
+				<th>주소(address)</th>
 				<td>BUTTON</td>
 			</tr>
 		</thead>
 
+		<!-- Auth_user Data id existed -->
+		{% if members  %}
+		<tbody>
+			{% for member in members%}
+			<tr>
+				<td>{{ member.0 }}</td>
+				<td>{{ member.1 }}</td>
+				<td>{{ member.2 }}</td>
+				<td>{{ member.3 }}</td>
+				<td>{{ member.4 }}</td>
+				<td>{{ member.5 }}</td>
+				<td>{{ member.6 }}</td>
+				<td>{{ member.9 }}</td>
+				<td>{{ member.10 }}</td>
+				<td>
+					<center>
+						<a href="#" class="button primary small">수정</a>
+						<a href="#" onclick="member_delete({{member.0}})" class="button primary small">삭제</a>
+					</center>
+				</td>
+			</tr>
+			{% endfor %}
+		</tbody>
+		
+		<!-- Auth_user Data does not existed -->
+		{% else %}
 		<tbody>
 			<tr>
 				<td>1</td>
@@ -45,13 +73,17 @@
 				<td>2020-01-01</td>
 				<td>2020-22-22</td>
 				<td>
-					<center>
-						<a href="#" class="button primary small">수정</a>
-						<a href="#" class="button primary small">삭제</a>
+					<center>{% csrf_token %}
+						<a href="#" class="button primary small member-update">수정</a>
+						<a href="#" class="button primary small member-delete">삭제</a>
 					</center>
 				</td>
 			</tr>
+			<tr>
+				<td colspan="8">No member data in auth_user table</td>
+			</tr>
 		</tbody>
+		{% endif %}
 
 		<tfoot>
 			<tr>
@@ -66,5 +98,53 @@
 
 	</table>
 </section>
+
+<script>
+function member_delete(id){
+	var jsonData = {"id" : id}
+	console.log("id :",id)
+	// var url = $(this).attr('href');
+	var url = "/{{url}}/XX11/memberDelete/";
+	var realName = $('#signup-user-name').val();
+
+	console.log("url >>",url);
+
+	/* Error */
+	// Forbidden (CSRF token missing or incorrect.): /BLACKCODE/XX11/memberDelete/
+	// [13/Jul/2022 21:17:21] "POST /BLACKCODE/XX11/memberDelete/ HTTP/1.1" 403 2544
+	$.ajaxSetup({headers: { "X-CSRFToken": '{{csrf_token}}' }});
+
+	$.ajax({
+		url : url,
+		// form에 file type 이 있는 경우 enctype: 'multipart/form-data'를 설정해야 한다.
+		enctype: 'multipart/form-data',
+		// formData를 이용하기 위해서 아래 processData, contentType을 반드시 false로 설정해줘야 한다.
+		processData: false,
+		contentType: false,
+		// ajax 통신 중, cache가 남아서 갱신 데이터를 받아오지 못하는 경우 사용한다.
+		cache: false,
+		type: "POST",
+		// data로는 formData를 request로 보낸다.
+		data: JSON.stringify(jsonData),
+	}).done(function(data){
+		console.log("data",data)
+
+		if(data.result){
+			alert(data.msg);
+			location.reload();
+			//opener.parent.location.reload();
+		}else{
+			alert(data.msg);
+
+			if(data.msg != null){
+				alert(data.msg)
+			}
+		}
+	});
+
+
+}
+
+</script>
 
 {% endblock %}

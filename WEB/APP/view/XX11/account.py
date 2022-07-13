@@ -2,6 +2,7 @@ from django.contrib import messages
 from django.shortcuts import render, redirect
 from django.http import HttpResponseRedirect, HttpResponse ,JsonResponse
 from datetime import timedelta, date, time, datetime
+from APP.view.XX11.Querry.Member import Member
 from config.settings import SETTING_INFO
 import sqlite3
 
@@ -12,6 +13,7 @@ db_sqlite3 = SETTING_INFO.DB_DIR
 currentTime = SETTING_INFO.currentTime
 conn = SETTING_INFO.conn
 cur = conn.cursor()
+
 class Account:
     
     def signUp(request):
@@ -26,9 +28,9 @@ class Account:
             
             # 1. Data POST방식 수신
             email       = request.POST.get("email");
-            birth       = request.POST.get("birth");
+            address     = request.POST.get("address");
             username    = request.POST.get("name");
-            nickName    = request.POST.get("nickName");
+            birth       = request.POST.get("birth");
             profile     = request.POST.get("profile");
             phoneNumber = request.POST.get("phoneNumber");
             password    = request.POST.get("password");
@@ -37,7 +39,7 @@ class Account:
             print("email        >>> ",email)
             print("birth        >>> ",birth)
             print("username     >>> ",username)
-            print("nickName     >>> ",nickName)
+            print("address      >>> ",address)
             print("profile      >>> ",profile)
             print("phoneNumber  >>> ",phoneNumber)
             print("password     >>> ",password)
@@ -45,7 +47,7 @@ class Account:
 
             # 2. Data Check
             if email == None or email == "":
-                msg = "Please enter your email address"
+                msg = "Please enter your email-address"
                 print(msg)
                 context = {
                         "result"    : False,
@@ -84,15 +86,29 @@ class Account:
                 cur.execute(Querry)
                 total = cur.fetchone()
                 print('[ TEST ] Querry = '+Querry+' \n 총 수강생 수 : ',total[0])
+            
                 
             try :
+                # 아이디 중복 체크
+                with conn:
+                    Querry = " SELECT * FROM auth_user WHERE email = '"+email+"'"
+                    cur.execute(Querry)
+                    member = cur.fetchone()
+                    if member == None or member == "" :
+                        pass
+                    else :
+                        print(type(member[1]))
+                        context = {"result"    : False,"msg"       : "아이디 중복"}
+                        return JsonResponse(context)
+                
+                print("member >>>>>>>>>>>",member)
                 with conn:
                     Querry = " insert into auth_user \n"
-                    Querry+= " (email, password, username, is_superuser, is_staff, is_active, date_joined, first_name, last_name) \n"
-                    Querry+= " values ('"+email+"','"+password+"','"+username+"', '3', '미사용컬럼', '미사용컬럼', '"+currentTime+"', '미사용컬럼', '미사용컬럼') "
+                    Querry+= " (email, password, username, is_superuser, is_staff, is_active, date_joined, birth, address) \n"
+                    Querry+= " values ('"+email+"','"+password+"','"+username+"', '3', '미사용컬럼', '미사용컬럼', '"+currentTime+"', '"+birth+"', '"+address+"') "
                     print(Querry)
                     cur.execute(Querry)
-                    execute = cur.fetchone()
+                    # execute = cur.fetchone()
             except Exception as e:
                 print('Exception : ',e)
                 context = {"result" : False, "msg" : e}
@@ -163,16 +179,16 @@ class Account:
                 msg = "로그인 성공"
                 
                 request.session['id']           = member[0]
-                request.session['password']     = member[1]
-                request.session['last_login']   = member[2]
-                request.session['is_superuser'] = member[3]
-                request.session['username']     = member[4]
-                request.session['first_name']   = member[5]
-                request.session['last_name']    = member[6]
+                request.session['email']        = member[1]
+                request.session['password']     = member[2]
+                request.session['username']     = member[3]
+                request.session['is_superuser'] = member[4]
+                request.session['date_joined']  = member[5]
+                request.session['last_login']   = member[6]
                 request.session['is_staff']     = member[7]
                 request.session['is_active']    = member[8]
-                request.session['date_joined']  = member[9]
-                request.session['email']        = member[10]
+                request.session['birth']        = member[9]
+                request.session['address']      = member[10]
 
                 print("session",request.session.session_key)
                 context = {"result" : True, 
@@ -196,3 +212,24 @@ class Account:
         # return render(request, './'+url+'/'+web+'/0000_index.html', context)
         # return HttpResponse("You're logged out.")
         return redirect('/BLACKCODE/XX11/0000/XX')
+    
+    def member_update(request):
+        msg = "회원수정 성공"
+        context = {"result" : True, 
+                    "msg" :msg}
+        return JsonResponse(context,status = 200)
+    
+    def member_delete(request):
+        # if request.method == 'POST':
+        # test = request.POST.get('test');
+        import json
+        test = json.loads(request.body)
+        print(test["id"])
+        if Member.select_delete_member(test["id"]) :
+            msg = "회원삭제 성공"
+            context = {"result" : True, 
+                        "msg" :msg}
+            return JsonResponse(context,status = 200)
+        else :
+            context = {"result" : True, 
+                        "msg" :"회원삭제"}
